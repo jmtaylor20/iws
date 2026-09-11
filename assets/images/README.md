@@ -13,7 +13,8 @@ progressive JPEG at quality 88, with a descriptive filename.
 | `kitchens/` | 30 | Kitchen cabinetry, islands, pantries |
 | `bathrooms/` | 11 | Vanities and bathroom cabinetry |
 | `built-ins-offices/` | 10 | Home offices, window seats, fireplace built-ins, detail shots |
-| `logo/` | 1 | IWS mark, 2000x2000 |
+| `logo/` | 1 | Old IWS mark, 2000x2000, plus transparent PNG cutouts (`iws-mark.png`, `iws-mark-white.png`). New lockup files go here too, see the root README. |
+| `1200/` | 51 | 1200px copies of every photo for grids and cards |
 
 `index.json` maps every file back to its source URL on the old site, the
 WordPress media ID, and which old-site pages showed it.
