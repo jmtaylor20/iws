@@ -16,6 +16,7 @@ duplicate uploads were dropped and are listed under `duplicates_of_this` in
 | --- | --- |
 | `originals/<category>/` | Full-resolution originals exactly as uploaded to WordPress (HEIC photos converted to full-size JPG, EXIF rotation applied). |
 | `web/<category>/` | Web-ready copies: EXIF rotation applied, longest edge 1600px, progressive JPEG at quality 82. Use these on the new site. |
+| `optimized/<category>/` | **Use these first.** The 52 photos worth reusing on the new site, hand-picked and enhanced: colors converted to sRGB, EXIF rotation applied, gentle auto-levels, contrast and saturation, resized to a 2400px long edge, sharpened, saved at JPEG quality 88 with descriptive filenames. Duplicate screenshots, low-res copies, personal photos and maps are left out. `optimized/index.json` maps each file back to its original. |
 | `heic-source/` | The raw iPhone `.heic` files, kept only as a backup of the source. |
 | `manifest.json` | One entry per asset: category, original and web paths, dimensions, source URL, WordPress media ID, upload date, which old-site pages used it, and notes. |
 
@@ -23,9 +24,9 @@ duplicate uploads were dropped and are listed under `duplicates_of_this` in
 
 | Category | Count |
 | --- | --- |
-| `bathrooms` | 9 |
+| `bathrooms` | 11 |
 | `built-ins-offices` | 14 |
-| `kitchens` | 40 |
+| `kitchens` | 38 |
 | `location-maps` | 3 |
 | `logo` | 5 |
 | `team` | 6 |

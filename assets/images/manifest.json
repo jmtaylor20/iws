@@ -1,5 +1,21 @@
 [
   {
+    "id": 587,
+    "category": "bathrooms",
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0781-HI-RES-scaled.jpg",
+    "title": "DSCF0781 HI-RES",
+    "wp_uploaded": "2024-01-09",
+    "used_on_pages": [
+      "bathrooms"
+    ],
+    "file": "originals/bathrooms/DSCF0781-HI-RES.jpg",
+    "width": 6240,
+    "height": 4160,
+    "web_file": "web/bathrooms/DSCF0781-HI-RES.jpg",
+    "web_width": 1600,
+    "web_height": 1067
+  },
+  {
     "id": 586,
     "category": "bathrooms",
     "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0783-HI-RES-scaled.jpg",
@@ -27,6 +43,22 @@
     "height": 6035,
     "web_file": "web/bathrooms/DSCF0784-HI-RES.jpg",
     "web_width": 1067,
+    "web_height": 1600
+  },
+  {
+    "id": 584,
+    "category": "bathrooms",
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0785-HI-RES-scaled.jpg",
+    "title": "DSCF0785 HI-RES",
+    "wp_uploaded": "2024-01-09",
+    "used_on_pages": [
+      "bathrooms"
+    ],
+    "file": "originals/bathrooms/DSCF0785-HI-RES.jpg",
+    "width": 4160,
+    "height": 5824,
+    "web_file": "web/bathrooms/DSCF0785-HI-RES.jpg",
+    "web_width": 1143,
     "web_height": 1600
   },
   {
@@ -394,38 +426,6 @@
     "web_file": "web/kitchens/BE1E64CA-51EC-4274-BBD4-F80DEF03D294.jpg",
     "web_width": 1440,
     "web_height": 1504
-  },
-  {
-    "id": 587,
-    "category": "kitchens",
-    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0781-HI-RES-scaled.jpg",
-    "title": "DSCF0781 HI-RES",
-    "wp_uploaded": "2024-01-09",
-    "used_on_pages": [
-      "bathrooms"
-    ],
-    "file": "originals/kitchens/DSCF0781-HI-RES.jpg",
-    "width": 6240,
-    "height": 4160,
-    "web_file": "web/kitchens/DSCF0781-HI-RES.jpg",
-    "web_width": 1600,
-    "web_height": 1067
-  },
-  {
-    "id": 584,
-    "category": "kitchens",
-    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0785-HI-RES-scaled.jpg",
-    "title": "DSCF0785 HI-RES",
-    "wp_uploaded": "2024-01-09",
-    "used_on_pages": [
-      "bathrooms"
-    ],
-    "file": "originals/kitchens/DSCF0785-HI-RES.jpg",
-    "width": 4160,
-    "height": 5824,
-    "web_file": "web/kitchens/DSCF0785-HI-RES.jpg",
-    "web_width": 1143,
-    "web_height": 1600
   },
   {
     "id": 582,
