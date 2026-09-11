@@ -1,0 +1,568 @@
+[
+  {
+    "file": "kitchens/white-kitchen-island-chandelier-dining.jpg",
+    "category": "kitchens",
+    "width": 2400,
+    "height": 1600,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0838-HI-RES-scaled.jpg",
+    "source_wp_media_id": 568,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "home"
+    ]
+  },
+  {
+    "file": "kitchens/white-cabinets-under-cabinet-lighting.jpg",
+    "category": "kitchens",
+    "width": 2049,
+    "height": 1537,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_4500.jpeg",
+    "source_wp_media_id": 569,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-cabinet-detail-gray-tile-backsplash.jpg",
+    "category": "kitchens",
+    "width": 2049,
+    "height": 1537,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_4505.jpeg",
+    "source_wp_media_id": 570,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/raised-panel-drawers-gray-backsplash.jpg",
+    "category": "kitchens",
+    "width": 2049,
+    "height": 1537,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_4506.jpeg",
+    "source_wp_media_id": 571,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-kitchen-lit-upper-cabinets.jpg",
+    "category": "kitchens",
+    "width": 2049,
+    "height": 1537,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_4501.jpeg",
+    "source_wp_media_id": 572,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-kitchen-island-gold-pendants.jpg",
+    "category": "kitchens",
+    "width": 1440,
+    "height": 1504,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/BE1E64CA-51EC-4274-BBD4-F80DEF03D294.jpg",
+    "source_wp_media_id": 575,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "kitchens"
+    ]
+  },
+  {
+    "file": "kitchens/farmhouse-sink-island-x-panel-detail.jpg",
+    "category": "kitchens",
+    "width": 1440,
+    "height": 1503,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/0646CADE-70CB-4514-BB03-088433E71483.jpg",
+    "source_wp_media_id": 576,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "home"
+    ]
+  },
+  {
+    "file": "kitchens/white-kitchen-range-hood-hardwood.jpg",
+    "category": "kitchens",
+    "width": 2400,
+    "height": 1600,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0798-HI-RES-scaled.jpg",
+    "source_wp_media_id": 582,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "kitchens"
+    ]
+  },
+  {
+    "file": "kitchens/kitchen-island-lantern-pendants.jpg",
+    "category": "kitchens",
+    "width": 1714,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0803-HI-RES-scaled.jpg",
+    "source_wp_media_id": 588,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "kitchens"
+    ]
+  },
+  {
+    "file": "kitchens/white-oak-island-open-shelf-end.jpg",
+    "category": "kitchens",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_2148.heic",
+    "source_wp_media_id": 577,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-oak-waterfall-island-bar-seating.jpg",
+    "category": "kitchens",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_2156.heic",
+    "source_wp_media_id": 578,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/pantry-pullout-refrigerator-surround.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_2150.heic",
+    "source_wp_media_id": 579,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-oak-island-wide-view.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_2147.heic",
+    "source_wp_media_id": 580,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-cabinets-dark-countertop-wood-trim.jpg",
+    "category": "kitchens",
+    "width": 1766,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_3076-scaled.jpeg",
+    "source_wp_media_id": 621,
+    "source_uploaded": "2024-01-24",
+    "used_on_old_site_pages": [
+      "kitchens"
+    ]
+  },
+  {
+    "file": "kitchens/kitchen-cabinetry-gray-tone.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/86B57313-9FFD-47CB-A2E5-746499996C24-scaled.jpeg",
+    "source_wp_media_id": 622,
+    "source_uploaded": "2024-01-24",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/floating-shelves-base-cabinet-nook.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7264.heic",
+    "source_wp_media_id": 597,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/glass-door-pantry-herringbone-floor.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7263.heic",
+    "source_wp_media_id": 598,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-kitchen-double-oven-shiplap-hood.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7262.heic",
+    "source_wp_media_id": 599,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/kitchen-to-dining-pantry-doors.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7261.heic",
+    "source_wp_media_id": 600,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/knotty-alder-pantry-doors-wreaths.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7260.heic",
+    "source_wp_media_id": 601,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/farmhouse-sink-floating-shelves-brass.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7259.heic",
+    "source_wp_media_id": 602,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "about-us"
+    ]
+  },
+  {
+    "file": "kitchens/white-oak-island-white-perimeter.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7258.heic",
+    "source_wp_media_id": 603,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/full-kitchen-island-seating-wide.jpg",
+    "category": "kitchens",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7257-1.heic",
+    "source_wp_media_id": 604,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-oak-shaker-island.jpg",
+    "category": "kitchens",
+    "width": 748,
+    "height": 892,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/DeGroot-Kitchen-Island.jpg",
+    "source_wp_media_id": 707,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": [
+      "kitchens"
+    ]
+  },
+  {
+    "file": "kitchens/white-kitchen-floating-shelves-brass-pulls.jpg",
+    "category": "kitchens",
+    "width": 747,
+    "height": 993,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/DeGroot-Kitchen.jpg",
+    "source_wp_media_id": 708,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-kitchen-range-black-countertop.jpg",
+    "category": "kitchens",
+    "width": 746,
+    "height": 997,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/Johnson-Kitchen-1.jpg",
+    "source_wp_media_id": 709,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/farmhouse-sink-window-black-countertop.jpg",
+    "category": "kitchens",
+    "width": 750,
+    "height": 1000,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/Johnson-Kitchen-2.jpg",
+    "source_wp_media_id": 710,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/coffee-station-tall-cabinets-fridge.jpg",
+    "category": "kitchens",
+    "width": 742,
+    "height": 995,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/Myers-kitchen-2.jpg",
+    "source_wp_media_id": 711,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "kitchens/white-kitchen-floating-shelf-dark-floor.jpg",
+    "category": "kitchens",
+    "width": 751,
+    "height": 997,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/Myers-Kitchen.jpg",
+    "source_wp_media_id": 712,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": [
+      "about-us"
+    ]
+  },
+  {
+    "file": "kitchens/white-kitchen-island-wicker-stools.jpg",
+    "category": "kitchens",
+    "width": 748,
+    "height": 555,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/06/Sarah-DeGroot-kitchen.jpg",
+    "source_wp_media_id": 713,
+    "source_uploaded": "2024-06-03",
+    "used_on_old_site_pages": [
+      "kitchens"
+    ]
+  },
+  {
+    "file": "bathrooms/white-vanity-gold-arched-mirror.jpg",
+    "category": "bathrooms",
+    "width": 1714,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0783-HI-RES-scaled.jpg",
+    "source_wp_media_id": 586,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "home"
+    ]
+  },
+  {
+    "file": "bathrooms/double-vanity-makeup-station.jpg",
+    "category": "bathrooms",
+    "width": 2400,
+    "height": 1600,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0781-HI-RES-scaled.jpg",
+    "source_wp_media_id": 587,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "bathrooms"
+    ]
+  },
+  {
+    "file": "bathrooms/white-vanity-hex-tile-floor.jpg",
+    "category": "bathrooms",
+    "width": 1714,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0785-HI-RES-scaled.jpg",
+    "source_wp_media_id": 584,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "bathrooms"
+    ]
+  },
+  {
+    "file": "bathrooms/vanity-drawer-crystal-knob-detail.jpg",
+    "category": "bathrooms",
+    "width": 1600,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0784-HI-RES-scaled.jpg",
+    "source_wp_media_id": 585,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "bathrooms/double-vanity-black-mirrors-hex-floor.jpg",
+    "category": "bathrooms",
+    "width": 1600,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0864-HI-RES-scaled.jpg",
+    "source_wp_media_id": 590,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "bathrooms"
+    ]
+  },
+  {
+    "file": "bathrooms/white-double-vanity-black-hardware.jpg",
+    "category": "bathrooms",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2026/02/IMG_3290-scaled.jpeg",
+    "source_wp_media_id": 758,
+    "source_uploaded": "2026-02-03",
+    "used_on_old_site_pages": [
+      "bathrooms"
+    ]
+  },
+  {
+    "file": "bathrooms/white-oak-vanity-arched-mirror.jpg",
+    "category": "bathrooms",
+    "width": 1029,
+    "height": 1372,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2026/02/IMG_3589.jpg",
+    "source_wp_media_id": 759,
+    "source_uploaded": "2026-02-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "bathrooms/stained-double-vanity-three-mirrors.jpg",
+    "category": "bathrooms",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2026/02/IMG_4701-scaled.jpeg",
+    "source_wp_media_id": 760,
+    "source_uploaded": "2026-02-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "bathrooms/double-vanity-brass-mirrors.jpg",
+    "category": "bathrooms",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2026/02/IMG_4677-scaled.jpeg",
+    "source_wp_media_id": 761,
+    "source_uploaded": "2026-02-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "bathrooms/white-oak-double-vanity-brass.jpg",
+    "category": "bathrooms",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2026/02/IMG_4698-scaled.jpeg",
+    "source_wp_media_id": 763,
+    "source_uploaded": "2026-02-03",
+    "used_on_old_site_pages": [
+      "bathrooms"
+    ]
+  },
+  {
+    "file": "bathrooms/white-vanity-marble-arched-mirror.jpg",
+    "category": "bathrooms",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2026/02/IMG_2014-scaled-e1770157598141.jpeg",
+    "source_wp_media_id": 764,
+    "source_uploaded": "2026-02-03",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "built-ins-offices/window-seat-bench-storage-art.jpg",
+    "category": "built-ins-offices",
+    "width": 1600,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0794-HI-RES-scaled.jpg",
+    "source_wp_media_id": 583,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "built-ins-offices/arched-window-seat-nook.jpg",
+    "category": "built-ins-offices",
+    "width": 1714,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0832-HI-RES-scaled.jpg",
+    "source_wp_media_id": 589,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "gallery",
+      "home"
+    ]
+  },
+  {
+    "file": "built-ins-offices/tall-storage-cabinets-window-seat.jpg",
+    "category": "built-ins-offices",
+    "width": 2400,
+    "height": 1600,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0860-HI-RES-scaled.jpg",
+    "source_wp_media_id": 591,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "built-ins-offices/walnut-cabinet-door-detail.jpg",
+    "category": "built-ins-offices",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0853-HI-RES-scaled.jpg",
+    "source_wp_media_id": 592,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "built-ins-offices/walnut-home-office-built-ins.jpg",
+    "category": "built-ins-offices",
+    "width": 1714,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0845-HI-RES-scaled.jpg",
+    "source_wp_media_id": 593,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "gallery",
+      "home"
+    ]
+  },
+  {
+    "file": "built-ins-offices/walnut-home-office-bookcases-wide.jpg",
+    "category": "built-ins-offices",
+    "width": 2400,
+    "height": 1600,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/DSCF0844-HI-RES-scaled.jpg",
+    "source_wp_media_id": 594,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": [
+      "gallery"
+    ]
+  },
+  {
+    "file": "built-ins-offices/home-office-cabinets-work-island.jpg",
+    "category": "built-ins-offices",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_0222.heic",
+    "source_wp_media_id": 573,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "built-ins-offices/kids-study-built-in-desks-shelves.jpg",
+    "category": "built-ins-offices",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_0212.heic",
+    "source_wp_media_id": 574,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "built-ins-offices/fireplace-built-in-shiplap-mantel.jpg",
+    "category": "built-ins-offices",
+    "width": 2400,
+    "height": 1800,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_1991.heic",
+    "source_wp_media_id": 581,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "built-ins-offices/fireplace-built-ins-white-brick.jpg",
+    "category": "built-ins-offices",
+    "width": 1800,
+    "height": 2400,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2024/01/IMG_7266.heic",
+    "source_wp_media_id": 596,
+    "source_uploaded": "2024-01-09",
+    "used_on_old_site_pages": []
+  },
+  {
+    "file": "logo/iws-logo.jpg",
+    "category": "logo",
+    "width": 2000,
+    "height": 2000,
+    "source_url": "https://travis-minardi.dreamhosters.com/wp-content/uploads/2022/12/LOGO-Minardi.jpg",
+    "source_wp_media_id": 10,
+    "source_uploaded": "2022-12-27",
+    "used_on_old_site_pages": []
+  }
+]
