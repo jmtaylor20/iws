@@ -22,11 +22,16 @@ position the Signature line and should be checked against how IWS actually runs 
 - Yelp reviews (Maureen J., Mary K., Marlene R., Ever M.) are verbatim from Yelp
   via its public listing mirror. Marlene R.'s review is shown up to the point the
   public snippet cuts off; paste the full text from Yelp if IWS wants it complete.
-- Google shows a 5.0 rating with 5 reviews, but the review text can't be pulled
-  without access to the Google Business Profile. Paste them into the commented
-  template in the "From Google" section (keep names and text verbatim).
-- "Mark" is from the old website with no source recorded; labelled "Client
-  testimonial". Re-label if IWS knows where it came from.
+- All four Google reviews (R. Thomas, Shelly S., Paul L., Bret R.) are on the
+  page verbatim with the owner replies. R. Thomas's reply is trimmed to its first
+  three sentences for length.
+- Shelly S.'s Google review has four photos. The vanity photo was already in the
+  library and is on her card. Add the other three (hallway cabinet, laundry room,
+  butler's nook) to assets/images/reviews/ and drop them into the commented slot.
+- Facebook shows 5.0 across 6 reviews; none of the text is on the page yet.
+- "Mark" (from the old website, source unknown) still appears on the home page
+  but not on the reviews page. Add him to the reviews page if IWS can name the
+  platform it came from.
 - The Google links use a Maps search. Swap in the profile's short link
   (g.page/...) and its "write a review" link once IWS shares them.
 - Ratings shown: Yelp 5.0, Google 5.0 (per Birdeye aggregate), BBB A+ with no
