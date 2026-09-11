@@ -120,13 +120,12 @@ p { margin: 0 0 1em; }
 .brand-logo { height: 52px; width: auto; }
 .brand .lockup { display: none; align-items: center; gap: 16px; }
 .brand.no-img .lockup { display: flex; }
-.mono { font-size: 1.15rem; display: inline-flex; align-items: flex-end; font-family: "Bodoni Moda", "Bodoni 72", "Didot", serif; font-weight: 500; line-height: 0.72; letter-spacing: -0.02em; }
-.mono .m-i { font-size: 2.55em; }
-.mono .m-ws { display: flex; flex-direction: column; font-size: 1.22em; line-height: 0.8; margin-left: -0.04em; padding-bottom: 0.06em; }
-.lockup-text { font-family: "Jost", var(--font-text); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; line-height: 1.25; }
+.mono-svg { height: 46px; width: auto; display: block; flex: none; }
+.mono-svg text { font-family: "Bodoni Moda", "Bodoni 72", Didot, serif; font-weight: 600; }
+.lockup-text { font-family: "Jost", var(--font-text); font-weight: 400; font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; line-height: 1.25; white-space: nowrap; }
 .lockup-text small { display: block; font-size: 0.82em; letter-spacing: 0.42em; opacity: 0.8; margin-top: 3px; }
 .brand--lg .brand-logo { height: 80px; }
-.brand--lg .mono { font-size: 1.5em; }
+.brand--lg .mono-svg { height: 68px; }
 .brand--lg .lockup-text { font-size: 0.78rem; }
 .footer-meta { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 1 !important; }
 .nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 36px); }
@@ -423,5 +422,6 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   .rating-strip { grid-template-columns: 1fr; }
   .site-header .lockup-text { display: none; }
   .brand-logo { height: 44px; }
+  .mono-svg { height: 40px; }
   .pillars li { grid-template-columns: 40px 1fr; }
 }
