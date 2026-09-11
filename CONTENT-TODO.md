@@ -18,6 +18,20 @@ position the Signature line and should be checked against how IWS actually runs 
 - Testimonial attributions ("Kitchen client", "Custom cabinetry client") are
   generic labels added by us. Adjust if IWS knows the projects.
 
+## Reviews page (reviews.html)
+- Yelp reviews (Maureen J., Mary K., Marlene R., Ever M.) are verbatim from Yelp
+  via its public listing mirror. Marlene R.'s review is shown up to the point the
+  public snippet cuts off; paste the full text from Yelp if IWS wants it complete.
+- Google shows a 5.0 rating with 5 reviews, but the review text can't be pulled
+  without access to the Google Business Profile. Paste them into the commented
+  template in the "From Google" section (keep names and text verbatim).
+- "Mark" is from the old website with no source recorded; labelled "Client
+  testimonial". Re-label if IWS knows where it came from.
+- The Google links use a Maps search. Swap in the profile's short link
+  (g.page/...) and its "write a review" link once IWS shares them.
+- Ratings shown: Yelp 5.0, Google 5.0 (per Birdeye aggregate), BBB A+ with no
+  complaints on file. Re-verify before launch.
+
 ## Logos and imagery
 - Add `assets/images/logo/iws-logo-white.png` (new lockup, white on transparent)
   and `assets/images/logo/signature-logo.png` (transparent PNG). Both are wired up.

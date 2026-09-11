@@ -129,8 +129,8 @@ p { margin: 0 0 1em; }
 .brand--lg .mono { font-size: 1.5em; }
 .brand--lg .lockup-text { font-size: 0.78rem; }
 .footer-meta { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 1 !important; }
-.nav { display: flex; align-items: center; gap: clamp(20px, 3vw, 40px); }
-.nav a { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; position: relative; padding: 6px 0; }
+.nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 36px); }
+.nav a { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; position: relative; padding: 6px 0; }
 .nav a::after { content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 0.35s var(--ease); }
 .nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
 .nav .btn { padding: 0.8rem 1.4rem; font-size: 0.72rem; }
@@ -169,7 +169,7 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 /* Signature wordmark: real logo if the file is present, script fallback if not */
 .sig-wordmark { display: block; line-height: 1; margin: 0.6rem 0 1.6rem; }
 .sig-wordmark img { height: clamp(64px, 9vw, 130px); width: auto; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.35)); }
-.sig-wordmark .sig-text { display: none; font-family: var(--font-script); font-size: clamp(4rem, 9.5vw, 8.5rem); font-weight: 400; line-height: 1; padding-right: 0.15em;
+.sig-wordmark .sig-text { display: none; font-family: var(--font-script); font-size: clamp(4rem, 9.5vw, 8.5rem); font-weight: 400; line-height: 1.35; padding: 0.05em 0.2em 0.12em 0.06em; margin: -0.18em 0 -0.22em -0.06em;
   background: linear-gradient(100deg, #b8904f 0%, #e6cf94 35%, #fff2c8 50%, #e6cf94 65%, #b8904f 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
   filter: drop-shadow(0 4px 18px rgba(0,0,0,0.55)); }
@@ -252,6 +252,21 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .quote p { font-family: var(--font-display); font-size: clamp(1.15rem, 1.5vw, 1.4rem); line-height: 1.4; margin: 0; flex: 1; }
 .quote cite { font-style: normal; font-size: 0.74rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--walnut); }
 .quote cite small { display: block; letter-spacing: 0.1em; color: var(--muted); font-weight: 500; margin-top: 4px; text-transform: none; font-size: 0.8rem; }
+
+/* ---- Reviews page ----------------------------------------------------- */
+.rating-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.rating { background: var(--cream); padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 6px; transition: background 0.3s var(--ease); }
+.rating:hover { background: var(--paper-2); }
+.rating .src { font-size: 0.68rem; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 700; color: var(--gold-2); }
+.rating .score { font-family: var(--font-display); font-size: clamp(3rem, 5vw, 4.6rem); line-height: 1; color: var(--walnut); margin-top: 6px; }
+.stars { color: var(--gold); letter-spacing: 0.12em; font-size: 1rem; line-height: 1; }
+.rating .rating-note { font-size: 0.9rem; color: var(--muted); margin-top: 6px; }
+.quotes--wide { grid-template-columns: repeat(2, 1fr); }
+.quote-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.src-pill { font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.quote--cta { justify-content: space-between; background: var(--paper-2); }
+.quote--cta:hover { border-color: var(--gold); }
+.quote--cta .link-arrow { align-self: flex-start; color: var(--walnut); }
 
 /* ---- Team ------------------------------------------------------------- */
 .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 2.4vw, 36px); }
@@ -379,7 +394,8 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   .stats { grid-template-columns: repeat(3, 1fr); }
   .process { grid-template-columns: 1fr 1fr; }
   .step:nth-child(2) { border-right: 0; }
-  .quotes, .team { grid-template-columns: 1fr; }
+  .quotes, .quotes--wide, .team { grid-template-columns: 1fr; }
+  .rating-strip { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .masonry { columns: 2; }
   .t1 { grid-column: 1 / 13; } .t2 { grid-column: 1 / 13; aspect-ratio: 4 / 3; }
