@@ -27,6 +27,17 @@ assets/images/        optimized photos (2400px) by category, plus 1200/ grid cop
 assets/images/logo/   logo files (see below)
 ```
 
+## Internal estimator (not linked from the site)
+
+`estimator/index.html` is a job-pricing tool for IWS staff, built from five real
+pricing breakdowns. It mirrors the Cabinet Vision "_Materials and Labor" template:
+Material, Hardware, Buyout and Labor budgets per room, then overhead and profit,
+then the finish quote. Rates are the ones IWS actually uses; per-cabinet quantity
+drivers are fitted from the past jobs and editable in the Rates & drivers tab. The
+Model check tab replays the five historical jobs (average error 5.5%). Source data
+is in `estimator/data/jobs.json`. The page is `noindex` and unlinked; put it behind
+a password before sharing the URL widely.
+
 ## Logos
 
 The header and footer look for `assets/images/logo/iws-logo-white.png` (the new

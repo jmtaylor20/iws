@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>IWS Estimator</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo/iws-mark.png">
+  <link rel="stylesheet" href="../css/fonts.css">
+  <style>
+    :root { --ink:#15110e; --ink-2:#221c17; --paper:#f6f1e8; --cream:#fbf8f2; --paper-2:#efe7da; --walnut:#5b3b1f; --gold:#c9a35b; --gold-2:#a87e3f; --muted:#8b8177; --line:rgba(21,17,14,.12); --ok:#3f7d4e; --warn:#b3542f; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Manrope","Helvetica Neue",Arial,sans-serif; font-size:15px; line-height:1.5; color:var(--ink); background:var(--paper); }
+    h1,h2,h3 { font-family:"Cormorant Garamond",Georgia,serif; font-weight:500; margin:0; line-height:1.1; }
+    button { font:inherit; cursor:pointer; }
+    input, select { font:inherit; font-size:14px; padding:8px 10px; border:1px solid var(--line); background:var(--cream); color:var(--ink); border-radius:0; width:100%; }
+    input:focus, select:focus { outline:2px solid var(--gold); outline-offset:-1px; }
+    label { display:grid; gap:4px; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:#5c534b; }
+    .top { background:var(--ink); color:var(--paper); padding:14px 0; }
+    .wrap { width:min(1400px, 100% - 40px); margin-inline:auto; }
+    .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    .brand { display:flex; align-items:center; gap:14px; color:var(--paper); text-decoration:none; }
+    .mono-svg { height:40px; width:auto; display:block; }
+    .mono-svg text { font-family:"Bodoni Moda",Didot,serif; font-weight:600; }
+    .brand span { font-family:"Jost",sans-serif; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; line-height:1.25; }
+    .brand small { display:block; font-size:.82em; letter-spacing:.42em; opacity:.8; margin-top:3px; }
+    .top h1 { font-size:1.6rem; }
+    .top h1 em { color:var(--gold); font-style:italic; }
+    .top .tools { display:flex; gap:8px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; border:1px solid var(--ink); background:transparent; color:var(--ink); }
+    .btn:hover { background:var(--ink); color:var(--paper); }
+    .btn--gold { background:var(--gold); border-color:var(--gold); color:var(--ink); }
+    .btn--gold:hover { background:#e6cf94; border-color:#e6cf94; color:var(--ink); }
+    .btn--light { border-color:rgba(246,241,232,.6); color:var(--paper); }
+    .btn--light:hover { background:var(--paper); color:var(--ink); }
+    .btn--sm { padding:7px 12px; font-size:.64rem; }
+    .btn--danger { border-color:var(--warn); color:var(--warn); }
+    .btn--danger:hover { background:var(--warn); color:#fff; }
+    .layout { display:grid; grid-template-columns: 1fr 400px; gap:28px; align-items:start; padding:28px 0 60px; }
+    .card { background:var(--cream); border:1px solid var(--line); padding:20px; }
+    .card + .card { margin-top:16px; }
+    .card h2 { font-size:1.5rem; margin-bottom:14px; display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+    .card h2 small { font-family:"Manrope",sans-serif; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-2); font-weight:700; }
+    .grid { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .room { border-top:3px solid var(--gold); }
+    .room-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
+    .room-head input { font-family:"Cormorant Garamond",serif; font-size:1.5rem; padding:4px 8px; border-color:transparent; background:transparent; }
+    .room-head input:hover, .room-head input:focus { border-color:var(--line); background:var(--paper); }
+    .room-sub { font-family:"Cormorant Garamond",serif; font-size:1.4rem; color:var(--walnut); white-space:nowrap; }
+    .adv { margin-top:12px; border-top:1px dashed var(--line); padding-top:12px; }
+    .adv summary { cursor:pointer; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--gold-2); }
+    .adv .grid { margin-top:12px; }
+    .adv label span.model { font-weight:400; letter-spacing:0; text-transform:none; color:var(--muted); font-size:.72rem; }
+    .summary { position:sticky; top:16px; }
+    .summary .total { font-family:"Cormorant Garamond",serif; font-size:3.2rem; line-height:1; color:var(--walnut); }
+    .summary .range { color:var(--muted); font-size:.9rem; margin-top:4px; }
+    .summary table { width:100%; border-collapse:collapse; margin-top:16px; font-size:.92rem; }
+    .summary td { padding:7px 0; border-bottom:1px solid var(--line); }
+    .summary td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
+    .summary tr.sub td { font-weight:700; }
+    .summary tr.tot td { font-family:"Cormorant Garamond",serif; font-size:1.4rem; border-bottom:0; padding-top:12px; }
+    .summary .meta { font-size:.8rem; color:var(--muted); margin-top:10px; }
+    #lines { overflow-x:auto; }
+    .lines { width:100%; min-width:600px; border-collapse:collapse; font-size:.85rem; margin-top:10px; }
+    .lines th, .lines td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+    .lines th { font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+    .lines td.n, .lines th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .lines tr.group td { font-weight:700; background:var(--paper-2); }
+    .cal { width:100%; border-collapse:collapse; font-size:.9rem; }
+    .cal th, .cal td { padding:9px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    .cal th { font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+    .cal td.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+    .cal .ok { color:var(--ok); font-weight:700; } .cal .warn { color:var(--warn); font-weight:700; }
+    .cal small { color:var(--muted); display:block; }
+    .settings .grid { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+    .note { font-size:.85rem; color:var(--muted); margin:8px 0 0; }
+    .tabs { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
+    .tabs button { padding:9px 14px; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; border:1px solid var(--line); background:transparent; }
+    .tabs button.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+    .pane[hidden] { display:none; }
+    @media (max-width: 980px) { .layout { grid-template-columns:1fr; } .summary { position:static; } }
+    @media print {
+      .top, .tabs, .tools, .adv, .btn, #settingsPane, #calPane, .room-head button, .noprint { display:none !important; }
+      body { background:#fff; } .layout { grid-template-columns:1fr; padding:0; } .card { border:0; padding:0 0 16px; page-break-inside:avoid; }
+      .summary { position:static; } input, select { border:0; background:transparent; padding:0; }
+      .print-head { display:block !important; }
+    }
+    .print-head { display:none; font-family:"Cormorant Garamond",serif; font-size:1.6rem; margin-bottom:12px; }
+    .print-head small { display:block; font-family:"Manrope",sans-serif; font-size:.75rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../index.html">
+      <svg class="mono-svg" viewBox="0 0 100 100" aria-hidden="true"><text font-size="130" x="2" y="97" fill="currentColor">i</text><text font-size="62" x="46" y="50" fill="currentColor">w</text><text font-size="62" x="54" y="97" fill="currentColor">s</text></svg>
+      <span>Interior Woodwork<small>Specialist</small></span>
+    </a>
+    <h1>Job <em>estimator</em></h1>
+    <div class="tools">
+      <button class="btn btn--light btn--sm" id="btnNew">New estimate</button>
+      <button class="btn btn--light btn--sm" id="btnCopy">Copy summary</button>
+      <button class="btn btn--gold btn--sm" id="btnPrint">Print / PDF</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="tabs noprint">
+    <button class="on" data-tab="estimate">Estimate</button>
+    <button data-tab="cal">Model check (5 past jobs)</button>
+    <button data-tab="settings">Rates &amp; drivers</button>
+  </div>
+
+  <!-- ESTIMATE -->
+  <section class="pane" id="estimatePane">
+    <div class="layout">
+      <div>
+        <div class="print-head" id="printHead"></div>
+        <div class="card">
+          <h2>Job <small>Applies to every room</small></h2>
+          <div class="grid">
+            <label>Customer / job name <input id="jobName" placeholder="e.g. Nguyen kitchen"></label>
+            <label>Finish <select id="finish"></select></label>
+            <label>Finish quote ($) <input id="finishQuote" type="number" min="0" step="50" placeholder="auto"></label>
+            <label>Overhead &amp; profit (%) <input id="overheadPct" type="number" min="0" step="1"></label>
+          </div>
+          <p class="note">Finish is the outsourced finisher's quote and sits outside the overhead %, the way the Steve Robles and Chris Lang breakdowns did it. Leave it blank to use the per-cabinet default from Rates &amp; drivers.</p>
+        </div>
+        <div id="rooms"></div>
+        <div style="margin-top:14px" class="noprint"><button class="btn" id="btnAddRoom">+ Add a room</button></div>
+        <div class="card" id="linesCard"><h2>Line items <small>How the number is built</small></h2><div id="lines"></div></div>
+      </div>
+      <aside class="summary card">
+        <h2>Estimate</h2>
+        <div class="total" id="total">$0</div>
+        <div class="range" id="range"></div>
+        <table id="summaryTable"></table>
+        <div class="meta" id="meta"></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CALIBRATION -->
+  <section class="pane" id="calPane" hidden>
+    <div class="card">
+      <h2>Model vs. the five real breakdowns <small>Same drivers, real cabinet counts</small></h2>
+      <p class="note">Each row runs a past job through the quick model using only its cabinet counts, construction, door style, drawer boxes and install method, then compares with what IWS actually priced. Aim for every row inside about 10%. Change drivers in the next tab and this updates live.</p>
+      <table class="cal" id="calTable"></table>
+      <p class="note" id="calSummary"></p>
+      <p class="note">Two jobs (McCasland, Herlinda) priced install as hours instead of per cabinet, so their cabinet counts are estimates. On McCasland and Herlinda the finish quote sat inside the 50% overhead; on the other three it sat outside. Bhimani used 63.6% overhead instead of 50%.</p>
+    </div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="pane settings" id="settingsPane" hidden>
+    <div class="card">
+      <h2>Rate card <small>From the breakdowns</small></h2>
+      <div class="grid" id="rateGrid"></div>
+    </div>
+    <div class="card">
+      <h2>Per-cabinet drivers <small>Fitted from past jobs</small></h2>
+      <div class="grid" id="driverGrid"></div>
+      <p class="note">Observed per cabinet on rooms with known counts: material $124 to $151, hardware $38 to $41, door area 4 to 9 sq ft, drawers 0.45 to 0.70, shop 1.1 to 1.3 hours (1.9 on the newest template), machining 0.5 to 0.85 hours, face-frame parts 3.6 to 4.9 on inset.</p>
+    </div>
+    <div class="card">
+      <h2>Door styles ($ per sq ft) <small>Rate and line markup</small></h2>
+      <div class="grid" id="doorGrid"></div>
+    </div>
+    <div class="card">
+      <h2>Drawer boxes, material tiers, finish <small>Per unit</small></h2>
+      <div class="grid" id="miscGrid"></div>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn--sm" id="btnExport">Export settings (JSON)</button>
+        <button class="btn btn--sm btn--danger" id="btnReset">Reset to fitted defaults</button>
+      </div>
+      <p class="note">Settings save in this browser automatically. Export before switching computers.</p>
+    </div>
+  </section>
+</main>
+
+<script src="model.js"></script>
+<script>
+(function () {
+  const M = window.IWSModel;
+  const $ = (s, r) => (r || document).querySelector(s);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+  const fmt2 = (n, d) => Number(n).toLocaleString('en-US', { maximumFractionDigits: d === undefined ? 2 : d });
+  const LS_CFG = 'iws-estimator-config-v1', LS_JOB = 'iws-estimator-job-v1';
+
+  // ---- config (rates, drivers, catalogs) with persistence ----
+  const deep = (o) => JSON.parse(JSON.stringify(o));
+  const defaults = () => ({ rates: deep(M.RATES), drivers: deep(M.DRIVERS), doors: deep(M.DOOR_STYLES), boxes: deep(M.DRAWER_BOXES), tiers: deep(M.MATERIAL_TIERS), finishes: deep(M.FINISH_OPTIONS) });
+  let cfg; try { cfg = JSON.parse(localStorage.getItem(LS_CFG)) || defaults(); } catch { cfg = defaults(); }
+  function applyCfg() { // push catalog edits into the model's shared lists
+    ['doors','boxes','tiers','finishes'].forEach((k) => { const list = { doors: M.DOOR_STYLES, boxes: M.DRAWER_BOXES, tiers: M.MATERIAL_TIERS, finishes: M.FINISH_OPTIONS }[k]; cfg[k].forEach((it, i) => Object.assign(list[i], it)); });
+  }
+  function saveCfg() { try { localStorage.setItem(LS_CFG, JSON.stringify(cfg)); } catch {} }
+
+  // ---- job state ----
+  const newRoom = (name) => ({ name: name || 'Kitchen', cabinets: 12, construction: 'frameless', doorStyle: 'shaker_paint', materialTier: 'paint', drawerBox: 'dovetail', installMode: 'percab', installHrs: '', installLump: '', travel: '', organizers: '', otherAddons: '', otherLabel: 'Other add-ons', overrides: {} });
+  const newJob = () => ({ name: '', finish: 'painted', finishQuote: '', overheadPct: '', rooms: [newRoom('Kitchen')] });
+  let job; try { job = JSON.parse(localStorage.getItem(LS_JOB)) || newJob(); } catch { job = newJob(); }
+  function saveJob() { try { localStorage.setItem(LS_JOB, JSON.stringify(job)); } catch {} }
+
+  // ---- render rooms ----
+  const opts = (list, sel, fmtFn) => list.map((o) => `<option value="${o.id}" ${o.id === sel ? 'selected' : ''}>${fmtFn ? fmtFn(o) : o.label}</option>`).join('');
+  function renderRooms() {
+    const est = M.estimateJob(job, cfg);
+    $('#rooms').innerHTML = job.rooms.map((r, i) => {
+      const e = est.rooms[i]; const q = e.quantities; const ov = r.overrides || {};
+      const qi = (key, label, unit, d) => `<label>${label} <span class="model">model: ${fmt2(q[key], d)} ${unit}</span><input type="number" step="any" data-ov="${key}" data-i="${i}" value="${ov[key] ?? ''}" placeholder="${fmt2(q[key], d)}"></label>`;
+      return `<div class="card room" data-i="${i}">
+        <div class="room-head">
+          <input data-f="name" data-i="${i}" value="${esc(r.name)}" aria-label="Room name">
+          <div style="display:flex;align-items:center;gap:12px"><span class="room-sub">${fmt(e.subtotal)} <small style="font-family:Manrope;font-size:.7rem;color:var(--muted)">before overhead</small></span>${job.rooms.length > 1 ? `<button class="btn btn--sm btn--danger" data-del="${i}">Remove</button>` : ''}</div>
+        </div>
+        <div class="grid">
+          <label>Cabinets <input type="number" min="0" step="1" data-f="cabinets" data-i="${i}" value="${r.cabinets}"></label>
+          <label>Construction <select data-f="construction" data-i="${i}"><option value="frameless" ${r.construction==='frameless'?'selected':''}>Frameless</option><option value="inset" ${r.construction==='inset'?'selected':''}>Inset / face frame</option></select></label>
+          <label>Door style <select data-f="doorStyle" data-i="${i}">${opts(cfg.doors, r.doorStyle, (o) => `${o.label} · $${o.rate}/sf`)}</select></label>
+          <label>Box material <select data-f="materialTier" data-i="${i}">${opts(cfg.tiers, r.materialTier)}</select></label>
+          <label>Drawer boxes <select data-f="drawerBox" data-i="${i}">${opts(cfg.boxes, r.drawerBox, (o) => `${o.label} · $${o.rate}`)}</select></label>
+          <label>Install <select data-f="installMode" data-i="${i}"><option value="percab" ${r.installMode==='percab'?'selected':''}>Per cabinet ($${cfg.rates.installPerCab} +${cfg.rates.installMarkupPct}%)</option><option value="hours" ${r.installMode==='hours'?'selected':''}>By hours</option><option value="lump" ${r.installMode==='lump'?'selected':''}>Lump sum</option><option value="none" ${r.installMode==='none'?'selected':''}>No install</option></select></label>
+          ${r.installMode==='hours' ? `<label>Install hours <input type="number" step="0.5" data-f="installHrs" data-i="${i}" value="${r.installHrs}"></label>` : ''}
+          ${r.installMode==='lump' ? `<label>Install lump sum ($) <input type="number" step="50" data-f="installLump" data-i="${i}" value="${r.installLump}"></label>` : ''}
+          <label>Travel ($) <input type="number" step="10" data-f="travel" data-i="${i}" value="${r.travel}" placeholder="0"></label>
+          <label>Organizers / inserts ($) <input type="number" step="10" data-f="organizers" data-i="${i}" value="${r.organizers}" placeholder="0"></label>
+          <label>Other add-ons ($) <input type="number" step="10" data-f="otherAddons" data-i="${i}" value="${r.otherAddons}" placeholder="0"></label>
+        </div>
+        <details class="adv">
+          <summary>Adjust quantities (override the model when you know the real numbers)</summary>
+          <div class="grid">
+            ${qi('doorSqFt', 'Door + panel area', 'sq ft', 1)}
+            ${qi('drawers', 'Drawer boxes', 'ea', 1)}
+            ${qi('shopHrs', 'Shop labor', 'hrs', 1)}
+            ${qi('machiningHrs', 'Machining', 'hrs', 1)}
+            ${r.construction==='inset' ? qi('faceFrameParts', 'Face frame parts', 'ea', 0) : ''}
+            ${r.construction==='inset' ? qi('drawerAsmHrs', 'Drawer assembly', 'hrs', 1) : ''}
+            ${qi('material', 'Material budget', '$', 0)}
+            ${qi('hardware', 'Hardware budget', '$', 0)}
+          </div>
+        </details>
+      </div>`;
+    }).join('');
+    renderSummary(est);
+  }
+  function esc(s) { return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c])); }
+
+  function renderSummary(est) {
+    est = est || M.estimateJob(job, cfg);
+    $('#total').textContent = fmt(est.total);
+    $('#range').textContent = `Likely range ${fmt(est.low)} to ${fmt(est.high)} · ${est.cabinets} cabinets · ${fmt(est.perCab)} per cabinet`;
+    const B = est.budgets;
+    $('#summaryTable').innerHTML = `
+      <tr><td>Material budget</td><td>${fmt(B.Material)}</td></tr>
+      <tr><td>Hardware budget</td><td>${fmt(B.Hardware)}</td></tr>
+      <tr><td>Buyout budget (doors, drawer boxes)</td><td>${fmt(B.Buyout)}</td></tr>
+      <tr><td>Labor budget (shop, CNC, install)</td><td>${fmt(B.Labor)}</td></tr>
+      <tr class="sub"><td>Subtotal</td><td>${fmt(est.subtotal)}</td></tr>
+      <tr><td>Overhead &amp; profit (${fmt2(est.overheadPct, 1)}%)</td><td>${fmt(est.overhead)}</td></tr>
+      <tr><td>Finish: ${est.finish.label}${job.finishQuote === '' ? ` <small style="color:var(--muted)">(${fmt(est.finishPerCab)}/cab)</small>` : ''}</td><td>${fmt(est.finishQuote)}</td></tr>
+      <tr class="tot"><td>Total</td><td>${fmt(est.total)}</td></tr>`;
+    $('#meta').textContent = job.name ? job.name : 'Untitled estimate';
+    $('#printHead').innerHTML = `${esc(job.name || 'Estimate')}<small>Interior Woodwork Specialist · ${new Date().toLocaleDateString()} · internal estimate, not a customer quote</small>`;
+    // line items
+    let html = '';
+    est.rooms.forEach((r) => {
+      html += `<table class="lines"><tr class="group"><td colspan="5">${esc(r.name)} · ${r.cabinets} cabinets · ${r.construction}</td><td class="n">${fmt(r.subtotal)}</td></tr>
+        <tr><th>Budget</th><th>Item</th><th class="n">Qty</th><th class="n">Rate</th><th class="n">Markup</th><th class="n">Total</th></tr>`;
+      r.lines.forEach((l) => { html += `<tr><td>${l.group}</td><td>${esc(l.label)}</td><td class="n">${fmt2(l.qty, 1)} ${l.unit}</td><td class="n">${fmt2(l.rate, 2)}</td><td class="n">${l.markupPct ? l.markupPct + '%' : ''}</td><td class="n">${fmt(l.total)}</td></tr>`; });
+      html += '</table>';
+    });
+    $('#lines').innerHTML = html;
+  }
+
+  // ---- events ----
+  $('#rooms').addEventListener('input', (e) => {
+    const t = e.target; const i = Number(t.dataset.i);
+    if (t.dataset.f) { job.rooms[i][t.dataset.f] = t.type === 'number' ? (t.value === '' ? '' : Number(t.value)) : t.value; }
+    if (t.dataset.ov) { job.rooms[i].overrides = job.rooms[i].overrides || {}; if (t.value === '') delete job.rooms[i].overrides[t.dataset.ov]; else job.rooms[i].overrides[t.dataset.ov] = Number(t.value); }
+    saveJob();
+    if (t.tagName === 'SELECT') renderRooms(); else { renderSummary(); $$updateRoomSubs(); }
+  });
+  function $$updateRoomSubs() { const est = M.estimateJob(job, cfg); document.querySelectorAll('.room').forEach((el, i) => { const s = el.querySelector('.room-sub'); if (s && est.rooms[i]) s.firstChild.textContent = fmt(est.rooms[i].subtotal) + ' '; }); }
+  $('#rooms').addEventListener('click', (e) => { const b = e.target.closest('[data-del]'); if (b) { job.rooms.splice(Number(b.dataset.del), 1); saveJob(); renderRooms(); } });
+  $('#btnAddRoom').addEventListener('click', () => { const names = ['Kitchen', 'Bathroom', 'Laundry', 'Pantry', 'Office', 'Closet', 'Entertainment wall']; job.rooms.push(newRoom(names[job.rooms.length % names.length])); saveJob(); renderRooms(); });
+  ['jobName', 'finishQuote', 'overheadPct'].forEach((id) => $('#' + id).addEventListener('input', (e) => { const k = id === 'jobName' ? 'name' : id; job[k] = e.target.value === '' ? '' : (id === 'jobName' ? e.target.value : Number(e.target.value)); saveJob(); renderSummary(); }));
+  $('#finish').addEventListener('change', (e) => { job.finish = e.target.value; saveJob(); renderSummary(); });
+  $('#btnNew').addEventListener('click', () => { if (confirm('Start a new estimate? The current one will be cleared.')) { job = newJob(); saveJob(); hydrateJob(); renderRooms(); } });
+  $('#btnPrint').addEventListener('click', () => window.print());
+  $('#btnCopy').addEventListener('click', () => {
+    const est = M.estimateJob(job, cfg); const B = est.budgets;
+    const txt = [`IWS estimate: ${job.name || 'Untitled'}`, ...est.rooms.map((r) => `  ${r.name}: ${r.cabinets} cabinets, ${r.construction}, ${fmt(r.subtotal)}`), `Material ${fmt(B.Material)} · Hardware ${fmt(B.Hardware)} · Buyout ${fmt(B.Buyout)} · Labor ${fmt(B.Labor)}`, `Subtotal ${fmt(est.subtotal)} + overhead ${fmt2(est.overheadPct,1)}% ${fmt(est.overhead)} + finish ${fmt(est.finishQuote)}`, `TOTAL ${fmt(est.total)} (range ${fmt(est.low)} to ${fmt(est.high)})`].join('\n');
+    navigator.clipboard?.writeText(txt).then(() => { $('#btnCopy').textContent = 'Copied'; setTimeout(() => ($('#btnCopy').textContent = 'Copy summary'), 1500); });
+  });
+  function hydrateJob() { $('#jobName').value = job.name || ''; $('#finish').innerHTML = opts(cfg.finishes, job.finish); $('#finishQuote').value = job.finishQuote; $('#overheadPct').value = job.overheadPct; $('#overheadPct').placeholder = cfg.rates.overheadPct; }
+
+  // ---- tabs ----
+  document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('on', x === b));
+    ['estimate', 'cal', 'settings'].forEach((p) => { $('#' + p + 'Pane').hidden = b.dataset.tab !== p; });
+    if (b.dataset.tab === 'cal') renderCal();
+  }));
+
+  // ---- calibration ----
+  function renderCal() {
+    const rows = M.calibrate(cfg); let mape = 0;
+    $('#calTable').innerHTML = `<tr><th>Job</th><th class="n">Cabinets</th><th class="n">IWS actual</th><th class="n">Model</th><th class="n">Error</th></tr>` + rows.map((r) => { mape += Math.abs(r.errorPct); return `<tr><td>${r.job}<small>${r.note}</small></td><td class="n">${r.cabinets}</td><td class="n">${fmt(r.actual)}</td><td class="n">${fmt(r.model)}</td><td class="n ${Math.abs(r.errorPct) <= 10 ? 'ok' : 'warn'}">${r.errorPct > 0 ? '+' : ''}${fmt2(r.errorPct, 1)}%</td></tr>`; }).join('');
+    $('#calSummary').textContent = `Average absolute error across the five jobs: ${fmt2(mape / rows.length, 1)}%.`;
+  }
+
+  // ---- settings ----
+  const RATE_LABELS = { shopLaborHr: 'Shop labor $/hr', machiningHr: 'Machining $/hr', drawerAsmHr: 'Drawer assembly $/hr', faceFramePart: 'Face frame part $', installPerCab: 'Install $/cabinet (or $/hr)', installMarkupPct: 'Install markup %', overheadPct: 'Overhead & profit %', hinge: 'Hinge $', guide: 'Drawer guide $', shelfPin: 'Shelf pin $', pilotScrew: 'Pilot screw $', materialMarkupPct: 'Material markup %', bandingMarkupPct: 'Banding markup %' };
+  const DRIVER_LABELS = { materialPerCab: 'Material $ per cabinet', hardwarePerCab: 'Hardware $ per cabinet', doorSqFtPerCab: 'Door + panel sq ft per cabinet', drawersPerCab: 'Drawer boxes per cabinet', shopHrsPerCab: 'Shop hours per cabinet', machiningHrsPerCab: 'Machining hours per cabinet', faceFramePartsPerCab: 'Face frame parts per cabinet (inset)', drawerAsmHrsPerDrawer: 'Drawer assembly hrs per drawer (inset)', insetShopHrsMult: 'Inset shop-hours multiplier' };
+  function renderSettings() {
+    $('#rateGrid').innerHTML = Object.keys(RATE_LABELS).map((k) => `<label>${RATE_LABELS[k]} <input type="number" step="any" data-rate="${k}" value="${cfg.rates[k]}"></label>`).join('');
+    $('#driverGrid').innerHTML = Object.keys(DRIVER_LABELS).map((k) => `<label>${DRIVER_LABELS[k]} <input type="number" step="any" data-driver="${k}" value="${cfg.drivers[k]}"></label>`).join('');
+    $('#doorGrid').innerHTML = cfg.doors.map((d, i) => `<label>${d.label} <div style="display:flex;gap:6px"><input type="number" step="0.1" data-door="${i}" data-k="rate" value="${d.rate}" title="$ per sq ft"><input type="number" step="1" data-door="${i}" data-k="markup" value="${d.markup}" title="markup %" style="max-width:70px"></div></label>`).join('');
+    $('#miscGrid').innerHTML = cfg.boxes.map((b, i) => `<label>Drawer box: ${b.label} ($) <input type="number" step="1" data-box="${i}" value="${b.rate}"></label>`).join('') + cfg.tiers.map((t, i) => `<label>Material tier: ${t.label} (× multiplier) <input type="number" step="0.05" data-tier="${i}" value="${t.mult}"></label>`).join('') + cfg.finishes.map((f, i) => `<label>Finish: ${f.label} ($/cab) <input type="number" step="10" data-finish="${i}" value="${f.perCab}"></label>`).join('');
+  }
+  $('#settingsPane').addEventListener('input', (e) => {
+    const t = e.target, v = Number(t.value);
+    if (t.dataset.rate) cfg.rates[t.dataset.rate] = v;
+    if (t.dataset.driver) cfg.drivers[t.dataset.driver] = v;
+    if (t.dataset.door) cfg.doors[Number(t.dataset.door)][t.dataset.k] = v;
+    if (t.dataset.box) cfg.boxes[Number(t.dataset.box)].rate = v;
+    if (t.dataset.tier) cfg.tiers[Number(t.dataset.tier)].mult = v;
+    if (t.dataset.finish) cfg.finishes[Number(t.dataset.finish)].perCab = v;
+    applyCfg(); saveCfg(); renderRooms();
+  });
+  $('#btnReset').addEventListener('click', () => { if (confirm('Reset every rate and driver to the fitted defaults?')) { cfg = defaults(); applyCfg(); saveCfg(); renderSettings(); hydrateJob(); renderRooms(); } });
+  $('#btnExport').addEventListener('click', () => { const blob = new Blob([JSON.stringify(cfg, null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'iws-estimator-settings.json'; a.click(); });
+
+  // ---- boot ----
+  applyCfg(); hydrateJob(); renderSettings(); renderRooms();
+})();
+</script>
+</body>
+</html>

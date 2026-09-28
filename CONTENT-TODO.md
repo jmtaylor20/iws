@@ -53,3 +53,16 @@ position the Signature line and should be checked against how IWS actually runs 
 - License #479690 was read from the new horizontal logo lockup. Verify on CSLB.
 - Add a privacy policy page if the site will run analytics or ads.
 - Page titles and meta descriptions are drafted; adjust keywords as needed.
+
+## Estimator (estimator/index.html)
+- Built from five breakdowns. Two of them (McCasland, Herlinda) priced install by
+  the hour, so their cabinet counts are estimates; confirm with IWS.
+- Finish default is $220/cabinet painted, $250 stained, taken from the finish
+  quotes on the past jobs ($157 to $360 per cabinet). Replace with the finisher's
+  real per-cabinet or per-door pricing when known.
+- The rift oak job runs 11% high in the model; more stained/hardwood jobs would
+  tighten that tier.
+- Add more breakdowns to estimator/data/jobs.json and the HISTORY list in
+  estimator/model.js as they come in. Ten to fifteen jobs would make the drivers
+  much more reliable.
+- Decide how to protect the page: Netlify password on a separate site, or a login.
