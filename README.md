@@ -34,7 +34,7 @@ pricing breakdowns. It mirrors the Cabinet Vision "_Materials and Labor" templat
 Material, Hardware, Buyout and Labor budgets per room, then overhead and profit,
 then the finish quote. Rates are the ones IWS actually uses; per-cabinet quantity
 drivers are fitted from the past jobs and editable in the Rates & drivers tab. The
-Model check tab replays the five historical jobs (average error 5.5%). Source data
+Model check tab replays six historical jobs. Source data
 is in `estimator/data/jobs.json`. The page is `noindex` and unlinked; put it behind
 a password before sharing the URL widely.
 

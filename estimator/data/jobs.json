@@ -1,133 +1,818 @@
 {
   "_note": "Historical IWS pricing breakdowns, transcribed from the five Cabinet Vision pricing-template PDFs. Dollar figures are as printed. cabinets = count used on the 'Install Labor per cab' line where present, otherwise an estimate flagged with cabinets_estimated.",
   "rate_card_observed": {
-    "shop_labor_per_hr": 75, "machining_per_hr": 150, "drawer_assembly_per_hr": 75, "face_frame_part": 15,
-    "install_per_cab": 90, "install_markup_pct": 50, "install_per_hr_lump": 90,
-    "material_markup_pct": 20, "banding_markup_pct": 10, "hardware_markup_pct": 0,
-    "hinge_blum": 7.20, "guide_tandem_21": 26, "guide_tandem_21_alt": 20, "guide_tandem_15": 26, "shelf_pin": 0.22, "pilot_screw": 0.03,
-    "door_sqft": { "shaker_paint_grade": [16.80, 20], "shaker_glass": [16.80, 30], "slab": [20, 30], "raised_panel": 20, "skinny_shaker_stained": 36, "shaker_stained": 53.20, "reeded": 100, "applied_panel_rail": 16.80 },
-    "door_markup_pct_seen": [0, 10, 15, 25],
-    "drawer_box": { "vortex_blum": 20, "iws_dovetail": [65, 75, 85] },
-    "overhead_profit_pct": [50, 63.6],
-    "sheet_costs": { "3/4 UV2 Birch": 60, "3/4 UF Maple": 45, "3/4 UV2 Maple": 95, "3/4 UF Maple C2": 115, "3/4 HardRock Ply": 100, "3/4 Mel HardRock": 110, "3/4 Rift Oak": [150, 235], "3/4 MDF": 72.95, "3/4 HDF Doors": [72.95, 76], "3/4 UF Import Birch": [45, 54], "1/2 Baltic Birch": 72.50, "1/4 Birch": 20, "1/4 Mel HardRock": 25, "1/4 MDF": 36.50, "5/8 CDX": 40, "Walnut board sqft": 13.20, "Maple board sqft": 6.60, "Rift oak board sqft": 17.33 }
+    "shop_labor_per_hr": 75,
+    "machining_per_hr": 150,
+    "drawer_assembly_per_hr": 75,
+    "face_frame_part": 15,
+    "install_per_cab": 90,
+    "install_markup_pct": 50,
+    "install_per_hr_lump": 90,
+    "material_markup_pct": 20,
+    "banding_markup_pct": 10,
+    "hardware_markup_pct": 0,
+    "hinge_blum": 7.2,
+    "guide_tandem_21": 26,
+    "guide_tandem_21_alt": 20,
+    "guide_tandem_15": 26,
+    "shelf_pin": 0.22,
+    "pilot_screw": 0.03,
+    "door_sqft": {
+      "shaker_paint_grade": [
+        16.8,
+        20
+      ],
+      "shaker_glass": [
+        16.8,
+        30
+      ],
+      "slab": [
+        20,
+        30
+      ],
+      "raised_panel": 20,
+      "skinny_shaker_stained": 36,
+      "shaker_stained": 53.2,
+      "reeded": 100,
+      "applied_panel_rail": 16.8
+    },
+    "door_markup_pct_seen": [
+      0,
+      10,
+      15,
+      25
+    ],
+    "drawer_box": {
+      "vortex_blum": 20,
+      "iws_dovetail": [
+        65,
+        75,
+        85
+      ]
+    },
+    "overhead_profit_pct": [
+      50,
+      63.6
+    ],
+    "sheet_costs": {
+      "3/4 UV2 Birch": 60,
+      "3/4 UF Maple": 45,
+      "3/4 UV2 Maple": 95,
+      "3/4 UF Maple C2": 115,
+      "3/4 HardRock Ply": 100,
+      "3/4 Mel HardRock": 110,
+      "3/4 Rift Oak": [
+        150,
+        235
+      ],
+      "3/4 MDF": 72.95,
+      "3/4 HDF Doors": [
+        72.95,
+        76
+      ],
+      "3/4 UF Import Birch": [
+        45,
+        54
+      ],
+      "1/2 Baltic Birch": 72.5,
+      "1/4 Birch": 20,
+      "1/4 Mel HardRock": 25,
+      "1/4 MDF": 36.5,
+      "5/8 CDX": 40,
+      "Walnut board sqft": 13.2,
+      "Maple board sqft": 6.6,
+      "Rift oak board sqft": 17.33
+    }
   },
   "jobs": [
     {
-      "job": "Steve Robles", "template": "_Materials and Labor (Sep 22, 26)", "construction": "inset", "finish": "painted", "overhead_pct": 50,
-      "finish_quote": 3600, "overhead_amount": 4130.70, "total": 15992.11,
+      "job": "Steve Robles",
+      "template": "_Materials and Labor (Sep 22, 26)",
+      "construction": "inset",
+      "finish": "painted",
+      "overhead_pct": 50,
+      "finish_quote": 3600,
+      "overhead_amount": 4130.7,
+      "total": 15992.11,
       "rooms": [
-        { "name": "Kitchen", "cabinets": 10, "construction": "inset",
-          "material": 1293.50, "hardware": 409.83, "buyout": 887.10, "labor": 5670.98, "room_total": 8261.41,
-          "sheets": 16, "board_sqft": 31.15, "banding_ft": 80.52, "hinges": 30, "guides": 7, "shelf_pins": 40,
-          "door_sqft": 39.65, "door_lines": [["_ShakerGlass (Winchester raised)", 14.35, 16.80, 0], ["Raised Panel DF", 4, 20, 0], ["Raised Panel Square", 21.3, 20, 0]],
-          "drawer_boxes": 7, "drawer_box_rate": 20, "drawer_box_type": "vortex",
-          "shop_hrs": 19, "machining_hrs": 8.54, "drawer_asm_hrs": 2.34, "face_frame_parts": 48,
-          "install_cabs": 10, "install_amount": 1350, "travel": 720, "other_addons": 0 }
+        {
+          "name": "Kitchen",
+          "cabinets": 10,
+          "construction": "inset",
+          "material": 1293.5,
+          "hardware": 409.83,
+          "buyout": 887.1,
+          "labor": 5670.98,
+          "room_total": 8261.41,
+          "sheets": 16,
+          "board_sqft": 31.15,
+          "banding_ft": 80.52,
+          "hinges": 30,
+          "guides": 7,
+          "shelf_pins": 40,
+          "door_sqft": 39.65,
+          "door_lines": [
+            [
+              "_ShakerGlass (Winchester raised)",
+              14.35,
+              16.8,
+              0
+            ],
+            [
+              "Raised Panel DF",
+              4,
+              20,
+              0
+            ],
+            [
+              "Raised Panel Square",
+              21.3,
+              20,
+              0
+            ]
+          ],
+          "drawer_boxes": 7,
+          "drawer_box_rate": 20,
+          "drawer_box_type": "vortex",
+          "shop_hrs": 19,
+          "machining_hrs": 8.54,
+          "drawer_asm_hrs": 2.34,
+          "face_frame_parts": 48,
+          "install_cabs": 10,
+          "install_amount": 1350,
+          "travel": 720,
+          "other_addons": 0
+        }
       ]
     },
     {
-      "job": "McCasland", "template": "_Materials and Labor (Aug 15, 25)", "construction": "frameless", "finish": "painted (finish inside room, before overhead)", "overhead_pct": 50,
-      "finish_quote": 4000, "finish_inside_room": true, "overhead_amount": 8914.11, "total": 26742.33,
+      "job": "McCasland",
+      "template": "_Materials and Labor (Aug 15, 25)",
+      "construction": "frameless",
+      "finish": "painted (finish inside room, before overhead)",
+      "overhead_pct": 50,
+      "finish_quote": 4000,
+      "finish_inside_room": true,
+      "overhead_amount": 8914.11,
+      "total": 26742.33,
       "rooms": [
-        { "name": "Kitchen", "cabinets": 20, "cabinets_estimated": true, "construction": "frameless", "species": "walnut + paint-grade",
-          "material_and_hardware": 3941.50, "material": 3196.38, "hardware": 745.12, "buyout": 3286.56, "labor": 10600.16, "room_total": 17828.22,
-          "sheets": 26, "board_sqft": 33.34, "banding_ft": 388.24, "hinges": 50, "guides": 14, "shelf_pins": 72,
-          "door_sqft": 111.82, "door_lines": [["_ShakerDoor", 83.92, 20, 0], ["_ShakerDoor DF", 17.9, 20, 0], ["Buyout Slab", 10, 20, 0]],
-          "drawer_boxes": 14, "drawer_box_rate": 75, "drawer_box_type": "dovetail",
-          "shop_hrs": 22.81, "machining_hrs": 13.26, "drawer_asm_hrs": 0, "face_frame_parts": 0,
-          "install_cabs": null, "install_amount": 2600, "travel": 0, "other_addons": 300, "finish_in_room": 4000 }
+        {
+          "name": "Kitchen",
+          "cabinets": 20,
+          "cabinets_estimated": true,
+          "construction": "frameless",
+          "species": "walnut + paint-grade",
+          "material_and_hardware": 3941.5,
+          "material": 3196.38,
+          "hardware": 745.12,
+          "buyout": 3286.56,
+          "labor": 10600.16,
+          "room_total": 17828.22,
+          "sheets": 26,
+          "board_sqft": 33.34,
+          "banding_ft": 388.24,
+          "hinges": 50,
+          "guides": 14,
+          "shelf_pins": 72,
+          "door_sqft": 111.82,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              83.92,
+              20,
+              0
+            ],
+            [
+              "_ShakerDoor DF",
+              17.9,
+              20,
+              0
+            ],
+            [
+              "Buyout Slab",
+              10,
+              20,
+              0
+            ]
+          ],
+          "drawer_boxes": 14,
+          "drawer_box_rate": 75,
+          "drawer_box_type": "dovetail",
+          "shop_hrs": 22.81,
+          "machining_hrs": 13.26,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 0,
+          "install_cabs": null,
+          "install_amount": 2600,
+          "travel": 0,
+          "other_addons": 300,
+          "finish_in_room": 4000
+        }
       ]
     },
     {
-      "job": "Chris Lang Home", "template": "Rift Oak Quote", "construction": "frameless", "finish": "stained rift oak + paint", "overhead_pct": 50,
-      "finish_quote": 8100, "overhead_amount": 15443.62, "total": 54430.87,
+      "job": "Chris Lang Home",
+      "template": "Rift Oak Quote",
+      "construction": "frameless",
+      "finish": "stained rift oak + paint",
+      "overhead_pct": 50,
+      "finish_quote": 8100,
+      "overhead_amount": 15443.62,
+      "total": 54430.87,
       "rooms": [
-        { "name": "Room 1 (Kitchen)", "cabinets": 42, "construction": "frameless", "species": "rift oak",
-          "material": 5385.02, "hardware": 1734.67, "buyout": 11021.21, "labor": 12746.35, "room_total": 30887.25,
-          "sheets": 42, "board_sqft": 32.82, "banding_ft": 638.13, "hinges": 74, "guides": 19, "shelf_pins": 92, "hardware_extras": 678,
-          "door_sqft": 217.90, "door_lines": [["_ShakerGlass", 20.67, 30, 10], ["Buyout Slab", 42.12, 30, 10], ["Reeded Door", 12.76, 100, 10], ["SkinnyShakerDoor (Stained)", 142.35, 36, 10]],
-          "applied_panel_sqft": 17.49, "applied_panel_rate": 16.80,
-          "drawer_boxes": 19, "drawer_box_rate": 85, "drawer_box_type": "dovetail",
-          "shop_hrs": 53.2, "machining_hrs": 20.58, "drawer_asm_hrs": 0, "face_frame_parts": 0,
-          "install_cabs": 42, "install_amount": 5670, "travel": 0, "other_addons": 0 }
+        {
+          "name": "Room 1 (Kitchen)",
+          "cabinets": 42,
+          "construction": "frameless",
+          "species": "rift oak",
+          "material": 5385.02,
+          "hardware": 1734.67,
+          "buyout": 11021.21,
+          "labor": 12746.35,
+          "room_total": 30887.25,
+          "sheets": 42,
+          "board_sqft": 32.82,
+          "banding_ft": 638.13,
+          "hinges": 74,
+          "guides": 19,
+          "shelf_pins": 92,
+          "hardware_extras": 678,
+          "door_sqft": 217.9,
+          "door_lines": [
+            [
+              "_ShakerGlass",
+              20.67,
+              30,
+              10
+            ],
+            [
+              "Buyout Slab",
+              42.12,
+              30,
+              10
+            ],
+            [
+              "Reeded Door",
+              12.76,
+              100,
+              10
+            ],
+            [
+              "SkinnyShakerDoor (Stained)",
+              142.35,
+              36,
+              10
+            ]
+          ],
+          "applied_panel_sqft": 17.49,
+          "applied_panel_rate": 16.8,
+          "drawer_boxes": 19,
+          "drawer_box_rate": 85,
+          "drawer_box_type": "dovetail",
+          "shop_hrs": 53.2,
+          "machining_hrs": 20.58,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 0,
+          "install_cabs": 42,
+          "install_amount": 5670,
+          "travel": 0,
+          "other_addons": 0
+        }
       ]
     },
     {
-      "job": "Herlinda Blair (Covina)", "template": "_Materials and Labor (Jul 16, 25)", "construction": "frameless", "finish": "painted (finish inside laundry room line)", "overhead_pct": 50,
-      "finish_quote": 3600, "finish_inside_room": true, "overhead_amount": 8341.36, "total": 25024.08,
+      "job": "Herlinda Blair (Covina)",
+      "template": "_Materials and Labor (Jul 16, 25)",
+      "construction": "frameless",
+      "finish": "painted (finish inside laundry room line)",
+      "overhead_pct": 50,
+      "finish_quote": 3600,
+      "finish_inside_room": true,
+      "overhead_amount": 8341.36,
+      "total": 25024.08,
       "rooms": [
-        { "name": "Kitchen", "cabinets": 14, "cabinets_estimated": true, "construction": "frameless",
-          "material_and_hardware": 2315.28, "material": 1831.68, "hardware": 483.60, "buyout": 1814.27, "labor": 4725.36, "room_total": 8854.91,
-          "sheets": 29, "board_sqft": 4.49, "banding_ft": 315.36, "hinges": 31, "guides": 12, "shelf_pins": 72,
-          "door_sqft": 85.49, "door_lines": [["_ShakerDoor", 72.65, 16.80, 10], ["_ShakerDoor DF", 9.56, 16.80, 10], ["_ShakerDrawer RR", 3.28, 16.80, 0]],
-          "drawer_boxes": 12, "drawer_box_rate": 20, "drawer_box_type": "vortex",
-          "shop_hrs": 19.7, "machining_hrs": 10.22, "drawer_asm_hrs": 0, "face_frame_parts": 0,
-          "install_cabs": null, "install_hrs": 17.5, "install_amount": 1575, "travel": 0, "other_addons": 140 },
-        { "name": "Laundry", "cabinets": 9, "cabinets_estimated": true, "construction": "frameless",
-          "material_and_hardware": 1105.92, "material": 755.10, "hardware": 350.82, "buyout": 905.69, "labor": 5816.20, "room_total": 7827.81,
-          "sheets": 11, "board_sqft": 0.61, "banding_ft": 104.85, "hinges": 26, "guides": 8, "shelf_pins": 8,
-          "door_sqft": 40.35, "door_lines": [["_ShakerDoor", 40.35, 16.80, 10]],
-          "drawer_boxes": 8, "drawer_box_rate": 20, "drawer_box_type": "vortex tray",
-          "shop_hrs": 8.11, "machining_hrs": 5.09, "drawer_asm_hrs": 0, "face_frame_parts": 0,
-          "install_cabs": null, "install_hrs": 9, "install_amount": 810, "travel": 0, "other_addons": 35, "finish_in_room": 3600 }
+        {
+          "name": "Kitchen",
+          "cabinets": 14,
+          "cabinets_estimated": true,
+          "construction": "frameless",
+          "material_and_hardware": 2315.28,
+          "material": 1831.68,
+          "hardware": 483.6,
+          "buyout": 1814.27,
+          "labor": 4725.36,
+          "room_total": 8854.91,
+          "sheets": 29,
+          "board_sqft": 4.49,
+          "banding_ft": 315.36,
+          "hinges": 31,
+          "guides": 12,
+          "shelf_pins": 72,
+          "door_sqft": 85.49,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              72.65,
+              16.8,
+              10
+            ],
+            [
+              "_ShakerDoor DF",
+              9.56,
+              16.8,
+              10
+            ],
+            [
+              "_ShakerDrawer RR",
+              3.28,
+              16.8,
+              0
+            ]
+          ],
+          "drawer_boxes": 12,
+          "drawer_box_rate": 20,
+          "drawer_box_type": "vortex",
+          "shop_hrs": 19.7,
+          "machining_hrs": 10.22,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 0,
+          "install_cabs": null,
+          "install_hrs": 17.5,
+          "install_amount": 1575,
+          "travel": 0,
+          "other_addons": 140
+        },
+        {
+          "name": "Laundry",
+          "cabinets": 9,
+          "cabinets_estimated": true,
+          "construction": "frameless",
+          "material_and_hardware": 1105.92,
+          "material": 755.1,
+          "hardware": 350.82,
+          "buyout": 905.69,
+          "labor": 5816.2,
+          "room_total": 7827.81,
+          "sheets": 11,
+          "board_sqft": 0.61,
+          "banding_ft": 104.85,
+          "hinges": 26,
+          "guides": 8,
+          "shelf_pins": 8,
+          "door_sqft": 40.35,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              40.35,
+              16.8,
+              10
+            ]
+          ],
+          "drawer_boxes": 8,
+          "drawer_box_rate": 20,
+          "drawer_box_type": "vortex tray",
+          "shop_hrs": 8.11,
+          "machining_hrs": 5.09,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 0,
+          "install_cabs": null,
+          "install_hrs": 9,
+          "install_amount": 810,
+          "travel": 0,
+          "other_addons": 35,
+          "finish_in_room": 3600
+        }
       ]
     },
     {
-      "job": "Bhimani Residence", "template": "_Materials and Labor (Jul 21, 25)", "construction": "inset", "finish": "unfinished (no finish quote)", "overhead_pct": 63.6,
-      "finish_quote": 0, "overhead_amount": 25865.81, "total": 66535.32,
+      "job": "Bhimani Residence",
+      "template": "_Materials and Labor (Jul 21, 25)",
+      "construction": "inset",
+      "finish": "unfinished (no finish quote)",
+      "overhead_pct": 63.6,
+      "finish_quote": 0,
+      "overhead_amount": 25865.81,
+      "total": 66535.32,
       "rooms": [
-        { "name": "Kitchen", "cabinets": 23, "construction": "inset", "species": "paint-grade + rift oak accents",
-          "material": 2846.82, "hardware": 873.37, "buyout": 6671.10, "labor": 9364.30, "room_total": 19755.59,
-          "sheets": 31, "board_sqft": 50.38, "banding_ft": 203.73, "hinges": 62, "guides": 16, "shelf_pins": 20,
-          "door_sqft": 110.59, "applied_panel_sqft": 63.18,
-          "door_lines": [["_ShakerDoor", 39.55, 20, 10], ["_ShakerDoor CS", 18.47, 20, 25], ["_ShakerDoor rail", 12.02, 16.80, 0], ["_ShakerDoor Stained", 31.11, 53.20, 10], ["_ShakerDoor DF", 5.43, 20, 10], ["_ShakerDoor DF Stained", 2.01, 53.20, 10], ["_ShakerDrawer RR", 2, 20, 15], ["panel _ShakerDoor", 4.21, 20, 10], ["panel _ShakerDoor Stained", 16.53, 53.20, 10], ["panel _ShakerTall", 42.44, 20, 10]],
-          "drawer_boxes": 16, "drawer_box_rate": 65, "drawer_box_type": "dovetail (8 drawers + 8 trays)",
-          "shop_hrs": 25.69, "machining_hrs": 16.98, "drawer_asm_hrs": 4, "face_frame_parts": 99,
-          "install_cabs": 23, "install_amount": 3105, "travel": 0, "other_addons": 0 },
-        { "name": "Dining", "cabinets": 7, "construction": "inset",
-          "material": 1423.56, "hardware": 274.64, "buyout": 2506.87, "labor": 3271.49, "room_total": 7476.56,
-          "sheets": 12, "board_sqft": 11.58, "banding_ft": 72.60, "hinges": 10, "guides": 9, "shelf_pins": 8,
-          "door_sqft": 37.75, "applied_panel_sqft": 26.12,
-          "door_lines": [["_ShakerDoor", 18.72, 20, 10], ["_ShakerDoor Stained", 5.43, 53.20, 10], ["_ShakerDoor DF", 11.6, 20, 10], ["_ShakerDrawer RR", 2, 16.80, 0], ["panel rail", 14.98, 16.80, 0], ["panel Stained", 11.14, 53.20, 10]],
-          "drawer_boxes": 9, "drawer_box_rate": 65, "drawer_box_type": "dovetail",
-          "shop_hrs": 7.87, "machining_hrs": 7.05, "drawer_asm_hrs": 2.25, "face_frame_parts": 34,
-          "install_cabs": 7, "install_amount": 945, "travel": 0, "other_addons": 0 },
-        { "name": "Laundry", "cabinets": 8, "construction": "inset",
-          "material": 1209.79, "hardware": 232.00, "buyout": 1665.40, "labor": 3142.68, "room_total": 6249.87,
-          "sheets": 15, "board_sqft": 16.36, "banding_ft": 133.07, "hinges": 24, "guides": 2, "shelf_pins": 24,
-          "door_sqft": 42.47, "applied_panel_sqft": 31.36,
-          "door_lines": [["_ShakerDoor", 9.78, 20, 25], ["_ShakerDoor rail", 28.5, 16.80, 0], ["_ShakerDoor DF", 4.19, 20, 25], ["panel rail", 13.36, 16.80, 0], ["panel", 18, 20, 25]],
-          "drawer_boxes": 2, "drawer_box_rate": 65, "drawer_box_type": "dovetail",
-          "shop_hrs": 8.91, "machining_hrs": 6.14, "drawer_asm_hrs": 0.5, "face_frame_parts": 29,
-          "install_cabs": 8, "install_amount": 1080, "travel": 0, "other_addons": 0 },
-        { "name": "Family Room", "cabinets": 6, "construction": "inset",
-          "material": 874.65, "hardware": 116.32, "buyout": 130.00, "labor": 2372.09, "room_total": 3493.06,
-          "sheets": 11, "board_sqft": 28.42, "banding_ft": 66.20, "hinges": 8, "guides": 2, "shelf_pins": 24,
-          "door_sqft": 0, "door_lines": [],
-          "drawer_boxes": 2, "drawer_box_rate": 65, "drawer_box_type": "dovetail",
-          "shop_hrs": 7.14, "machining_hrs": 4.29, "drawer_asm_hrs": 0.5, "face_frame_parts": 23,
-          "install_cabs": 6, "install_amount": 810, "travel": 0, "other_addons": 0 },
-        { "name": "Bathroom", "cabinets": 2, "construction": "frameless",
-          "material": 288.63, "hardware": 16.52, "buyout": 27.25, "labor": 550.64, "room_total": 883.04,
-          "sheets": 4, "board_sqft": 0, "banding_ft": 15.81, "hinges": 2, "guides": 0, "shelf_pins": 8,
-          "door_sqft": 1.62, "door_lines": [["_ShakerDoor", 1.62, 16.80, 0]],
-          "drawer_boxes": 0, "drawer_box_rate": 0, "drawer_box_type": "none",
-          "shop_hrs": 2.12, "machining_hrs": 0.81, "drawer_asm_hrs": 0, "face_frame_parts": 0,
-          "install_cabs": 2, "install_amount": 270, "travel": 0, "other_addons": 0 },
-        { "name": "Isla's Room", "cabinets": 4, "construction": "inset",
-          "material": 237.33, "hardware": 2.36, "buyout": 0, "labor": 1164.30, "room_total": 1403.99,
-          "sheets": 3, "board_sqft": 0, "banding_ft": 17.63, "hinges": 0, "guides": 0, "shelf_pins": 8,
-          "door_sqft": 0, "door_lines": [],
-          "drawer_boxes": 0, "drawer_box_rate": 0, "drawer_box_type": "none",
-          "shop_hrs": 4.36, "machining_hrs": 1.08, "drawer_asm_hrs": 0, "face_frame_parts": 9,
-          "install_cabs": 4, "install_amount": 540, "travel": 0, "other_addons": 0 },
-        { "name": "Isla's Room (Copy)", "cabinets": 3, "construction": "inset",
-          "material": 417.17, "hardware": 3.88, "buyout": 0, "labor": 986.35, "room_total": 1407.40,
-          "sheets": 4, "board_sqft": 5.75, "banding_ft": 13.87, "hinges": 0, "guides": 0, "shelf_pins": 16,
-          "door_sqft": 0, "door_lines": [],
-          "drawer_boxes": 0, "drawer_box_rate": 0, "drawer_box_type": "none",
-          "shop_hrs": 3.31, "machining_hrs": 1.52, "drawer_asm_hrs": 0, "face_frame_parts": 7,
-          "install_cabs": 3, "install_amount": 405, "travel": 0, "other_addons": 0 }
+        {
+          "name": "Kitchen",
+          "cabinets": 23,
+          "construction": "inset",
+          "species": "paint-grade + rift oak accents",
+          "material": 2846.82,
+          "hardware": 873.37,
+          "buyout": 6671.1,
+          "labor": 9364.3,
+          "room_total": 19755.59,
+          "sheets": 31,
+          "board_sqft": 50.38,
+          "banding_ft": 203.73,
+          "hinges": 62,
+          "guides": 16,
+          "shelf_pins": 20,
+          "door_sqft": 110.59,
+          "applied_panel_sqft": 63.18,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              39.55,
+              20,
+              10
+            ],
+            [
+              "_ShakerDoor CS",
+              18.47,
+              20,
+              25
+            ],
+            [
+              "_ShakerDoor rail",
+              12.02,
+              16.8,
+              0
+            ],
+            [
+              "_ShakerDoor Stained",
+              31.11,
+              53.2,
+              10
+            ],
+            [
+              "_ShakerDoor DF",
+              5.43,
+              20,
+              10
+            ],
+            [
+              "_ShakerDoor DF Stained",
+              2.01,
+              53.2,
+              10
+            ],
+            [
+              "_ShakerDrawer RR",
+              2,
+              20,
+              15
+            ],
+            [
+              "panel _ShakerDoor",
+              4.21,
+              20,
+              10
+            ],
+            [
+              "panel _ShakerDoor Stained",
+              16.53,
+              53.2,
+              10
+            ],
+            [
+              "panel _ShakerTall",
+              42.44,
+              20,
+              10
+            ]
+          ],
+          "drawer_boxes": 16,
+          "drawer_box_rate": 65,
+          "drawer_box_type": "dovetail (8 drawers + 8 trays)",
+          "shop_hrs": 25.69,
+          "machining_hrs": 16.98,
+          "drawer_asm_hrs": 4,
+          "face_frame_parts": 99,
+          "install_cabs": 23,
+          "install_amount": 3105,
+          "travel": 0,
+          "other_addons": 0
+        },
+        {
+          "name": "Dining",
+          "cabinets": 7,
+          "construction": "inset",
+          "material": 1423.56,
+          "hardware": 274.64,
+          "buyout": 2506.87,
+          "labor": 3271.49,
+          "room_total": 7476.56,
+          "sheets": 12,
+          "board_sqft": 11.58,
+          "banding_ft": 72.6,
+          "hinges": 10,
+          "guides": 9,
+          "shelf_pins": 8,
+          "door_sqft": 37.75,
+          "applied_panel_sqft": 26.12,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              18.72,
+              20,
+              10
+            ],
+            [
+              "_ShakerDoor Stained",
+              5.43,
+              53.2,
+              10
+            ],
+            [
+              "_ShakerDoor DF",
+              11.6,
+              20,
+              10
+            ],
+            [
+              "_ShakerDrawer RR",
+              2,
+              16.8,
+              0
+            ],
+            [
+              "panel rail",
+              14.98,
+              16.8,
+              0
+            ],
+            [
+              "panel Stained",
+              11.14,
+              53.2,
+              10
+            ]
+          ],
+          "drawer_boxes": 9,
+          "drawer_box_rate": 65,
+          "drawer_box_type": "dovetail",
+          "shop_hrs": 7.87,
+          "machining_hrs": 7.05,
+          "drawer_asm_hrs": 2.25,
+          "face_frame_parts": 34,
+          "install_cabs": 7,
+          "install_amount": 945,
+          "travel": 0,
+          "other_addons": 0
+        },
+        {
+          "name": "Laundry",
+          "cabinets": 8,
+          "construction": "inset",
+          "material": 1209.79,
+          "hardware": 232.0,
+          "buyout": 1665.4,
+          "labor": 3142.68,
+          "room_total": 6249.87,
+          "sheets": 15,
+          "board_sqft": 16.36,
+          "banding_ft": 133.07,
+          "hinges": 24,
+          "guides": 2,
+          "shelf_pins": 24,
+          "door_sqft": 42.47,
+          "applied_panel_sqft": 31.36,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              9.78,
+              20,
+              25
+            ],
+            [
+              "_ShakerDoor rail",
+              28.5,
+              16.8,
+              0
+            ],
+            [
+              "_ShakerDoor DF",
+              4.19,
+              20,
+              25
+            ],
+            [
+              "panel rail",
+              13.36,
+              16.8,
+              0
+            ],
+            [
+              "panel",
+              18,
+              20,
+              25
+            ]
+          ],
+          "drawer_boxes": 2,
+          "drawer_box_rate": 65,
+          "drawer_box_type": "dovetail",
+          "shop_hrs": 8.91,
+          "machining_hrs": 6.14,
+          "drawer_asm_hrs": 0.5,
+          "face_frame_parts": 29,
+          "install_cabs": 8,
+          "install_amount": 1080,
+          "travel": 0,
+          "other_addons": 0
+        },
+        {
+          "name": "Family Room",
+          "cabinets": 6,
+          "construction": "inset",
+          "material": 874.65,
+          "hardware": 116.32,
+          "buyout": 130.0,
+          "labor": 2372.09,
+          "room_total": 3493.06,
+          "sheets": 11,
+          "board_sqft": 28.42,
+          "banding_ft": 66.2,
+          "hinges": 8,
+          "guides": 2,
+          "shelf_pins": 24,
+          "door_sqft": 0,
+          "door_lines": [],
+          "drawer_boxes": 2,
+          "drawer_box_rate": 65,
+          "drawer_box_type": "dovetail",
+          "shop_hrs": 7.14,
+          "machining_hrs": 4.29,
+          "drawer_asm_hrs": 0.5,
+          "face_frame_parts": 23,
+          "install_cabs": 6,
+          "install_amount": 810,
+          "travel": 0,
+          "other_addons": 0
+        },
+        {
+          "name": "Bathroom",
+          "cabinets": 2,
+          "construction": "frameless",
+          "material": 288.63,
+          "hardware": 16.52,
+          "buyout": 27.25,
+          "labor": 550.64,
+          "room_total": 883.04,
+          "sheets": 4,
+          "board_sqft": 0,
+          "banding_ft": 15.81,
+          "hinges": 2,
+          "guides": 0,
+          "shelf_pins": 8,
+          "door_sqft": 1.62,
+          "door_lines": [
+            [
+              "_ShakerDoor",
+              1.62,
+              16.8,
+              0
+            ]
+          ],
+          "drawer_boxes": 0,
+          "drawer_box_rate": 0,
+          "drawer_box_type": "none",
+          "shop_hrs": 2.12,
+          "machining_hrs": 0.81,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 0,
+          "install_cabs": 2,
+          "install_amount": 270,
+          "travel": 0,
+          "other_addons": 0
+        },
+        {
+          "name": "Isla's Room",
+          "cabinets": 4,
+          "construction": "inset",
+          "material": 237.33,
+          "hardware": 2.36,
+          "buyout": 0,
+          "labor": 1164.3,
+          "room_total": 1403.99,
+          "sheets": 3,
+          "board_sqft": 0,
+          "banding_ft": 17.63,
+          "hinges": 0,
+          "guides": 0,
+          "shelf_pins": 8,
+          "door_sqft": 0,
+          "door_lines": [],
+          "drawer_boxes": 0,
+          "drawer_box_rate": 0,
+          "drawer_box_type": "none",
+          "shop_hrs": 4.36,
+          "machining_hrs": 1.08,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 9,
+          "install_cabs": 4,
+          "install_amount": 540,
+          "travel": 0,
+          "other_addons": 0
+        },
+        {
+          "name": "Isla's Room (Copy)",
+          "cabinets": 3,
+          "construction": "inset",
+          "material": 417.17,
+          "hardware": 3.88,
+          "buyout": 0,
+          "labor": 986.35,
+          "room_total": 1407.4,
+          "sheets": 4,
+          "board_sqft": 5.75,
+          "banding_ft": 13.87,
+          "hinges": 0,
+          "guides": 0,
+          "shelf_pins": 16,
+          "door_sqft": 0,
+          "door_lines": [],
+          "drawer_boxes": 0,
+          "drawer_box_rate": 0,
+          "drawer_box_type": "none",
+          "shop_hrs": 3.31,
+          "machining_hrs": 1.52,
+          "drawer_asm_hrs": 0,
+          "face_frame_parts": 7,
+          "install_cabs": 3,
+          "install_amount": 405,
+          "travel": 0,
+          "other_addons": 0
+        }
+      ]
+    },
+    {
+      "job": "Haney Home Projects",
+      "template": "_Materials and Labor (Sep 29, 26)",
+      "construction": "frameless (with 59 face frame parts)",
+      "finish": "painted",
+      "overhead_pct": 50,
+      "finish_quote": 14000,
+      "overhead_amount": 22059.22,
+      "total": 80177.65,
+      "status": "first-try estimate, not final",
+      "rooms": [
+        {
+          "name": "Kitchen (with island, bar and pantry)",
+          "cabinets": 50,
+          "construction": "frameless",
+          "material": 11852.27,
+          "hardware": 2130.5,
+          "buyout": 7720.23,
+          "labor": 22415.43,
+          "room_total": 44118.43,
+          "sheets": 87,
+          "board_sqft": 639.25,
+          "banding_ft": 906.02,
+          "hinges": 116,
+          "guides": 48,
+          "shelf_pins": 215,
+          "door_sqft": 338.01,
+          "door_lines": [
+            [
+              "_ShakerDoor Raised panel",
+              200.18,
+              20,
+              0
+            ],
+            [
+              "_ShakerDoor (No Reduced Rail)",
+              62.75,
+              20,
+              0
+            ],
+            [
+              "_ShakerDoor (Add Rail)",
+              59.22,
+              20,
+              0
+            ],
+            [
+              "_ShakerDrawer (Reduced Rail)",
+              15.86,
+              20,
+              0
+            ]
+          ],
+          "drawer_boxes": 48,
+          "drawer_box_rate": 20,
+          "drawer_box_type": "vortex (35 drawers + 13 trays)",
+          "shop_hrs": 66.11,
+          "machining_hrs": 37.48,
+          "drawer_asm_hrs": 15.99,
+          "face_frame_parts": 59,
+          "install_cabs": 50,
+          "install_amount": 6750,
+          "travel": 0,
+          "other_addons": 3000,
+          "other_label": "Inserts and pullouts",
+          "zero_priced": [
+            "1/4 Glass x3 sheets",
+            "1/8 Aluminum x13",
+            "Crown Cove molding 59.4 ft",
+            "Pocket screws x922",
+            "RaFix20 x160"
+          ],
+          "note": "1/2 Maple Board 539.16 sq ft at $8.74 = $5,658 (48% of material). On other jobs this material only appears for pull-outs (33 sq ft on Lang). Worth confirming."
+        }
       ]
     }
   ]

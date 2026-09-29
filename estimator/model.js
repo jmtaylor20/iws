@@ -178,6 +178,9 @@
         { name: 'Bathroom', cabinets: 2, construction: 'frameless', doorStyle: 'shaker_paint_lo', materialTier: 'paint', drawerBox: 'vortex', installMode: 'percab', drawersPerCab: 0 },
         { name: "Isla's Room", cabinets: 4, construction: 'inset', doorStyle: 'none', materialTier: 'paint', drawerBox: 'vortex', installMode: 'percab', drawersPerCab: 0 },
         { name: "Isla's Room (2)", cabinets: 3, construction: 'inset', doorStyle: 'none', materialTier: 'paint', drawerBox: 'vortex', installMode: 'percab', drawersPerCab: 0 } ] } },
+    { job: 'Haney Home Projects', actual: 80177.65, note: 'First-try estimate, Sep 2026 template. 50 cabinets, frameless, big island, bar and pantry, glass uppers, open shelving. $3,000 inserts, $14,000 finish. Not part of the original fit.',
+      input: { finish: 'painted', finishQuote: 14000, overheadPct: 50, rooms: [
+        { name: 'Kitchen', cabinets: 50, construction: 'frameless', doorStyle: 'shaker_paint', materialTier: 'paint', drawerBox: 'vortex', installMode: 'percab', organizers: 3000, doorSqFtPerCab: 6.8 } ] } },
   ];
 
   function calibrate(cfg) {

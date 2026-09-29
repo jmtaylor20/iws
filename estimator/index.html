@@ -109,7 +109,7 @@
 <main class="wrap">
   <div class="tabs noprint">
     <button class="on" data-tab="estimate">Estimate</button>
-    <button data-tab="cal">Model check (5 past jobs)</button>
+    <button data-tab="cal">Model check (6 past jobs)</button>
     <button data-tab="settings">Rates &amp; drivers</button>
   </div>
 
@@ -145,7 +145,7 @@
   <!-- CALIBRATION -->
   <section class="pane" id="calPane" hidden>
     <div class="card">
-      <h2>Model vs. the five real breakdowns <small>Same drivers, real cabinet counts</small></h2>
+      <h2>Model vs. the six real breakdowns <small>Same drivers, real cabinet counts</small></h2>
       <p class="note">Each row runs a past job through the quick model using only its cabinet counts, construction, door style, drawer boxes and install method, then compares with what IWS actually priced. Aim for every row inside about 10%. Change drivers in the next tab and this updates live.</p>
       <table class="cal" id="calTable"></table>
       <p class="note" id="calSummary"></p>
@@ -308,7 +308,7 @@
   function renderCal() {
     const rows = M.calibrate(cfg); let mape = 0;
     $('#calTable').innerHTML = `<tr><th>Job</th><th class="n">Cabinets</th><th class="n">IWS actual</th><th class="n">Model</th><th class="n">Error</th></tr>` + rows.map((r) => { mape += Math.abs(r.errorPct); return `<tr><td>${r.job}<small>${r.note}</small></td><td class="n">${r.cabinets}</td><td class="n">${fmt(r.actual)}</td><td class="n">${fmt(r.model)}</td><td class="n ${Math.abs(r.errorPct) <= 10 ? 'ok' : 'warn'}">${r.errorPct > 0 ? '+' : ''}${fmt2(r.errorPct, 1)}%</td></tr>`; }).join('');
-    $('#calSummary').textContent = `Average absolute error across the five jobs: ${fmt2(mape / rows.length, 1)}%.`;
+    $('#calSummary').textContent = `Average absolute error across the jobs: ${fmt2(mape / rows.length, 1)}%.`;
   }
 
   // ---- settings ----
