@@ -38,8 +38,10 @@ area by style, drawer boxes, face-frame parts, inserts and specialty material.
 Hinges, shop and CNC hours, drawer assembly and box material are derived and can
 be overridden. Rates are IWS's own; drivers are fitted from the six jobs and
 editable in the Rates & drivers tab. The Model check tab replays the six jobs
-(average error 4.2%). Source data is in `estimator/data/jobs.json`. The page is
-`noindex` and unlinked; put it behind a password before sharing the URL widely.
+(average error 4.2%). Estimates can be saved by name, reopened, duplicated and deleted; they live in
+the browser's local storage. Source data is in `estimator/data/jobs.json`. The
+page is `noindex` and unlinked; put it behind a password before sharing the URL
+widely.
 
 ## Logos
 

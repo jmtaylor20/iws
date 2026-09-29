@@ -84,6 +84,11 @@
     .tabs button.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
     .pane[hidden] { display:none; }
     .cal-wrap { overflow-x:auto; }
+    .saved-actions { display:flex; gap:6px; flex-wrap:wrap; }
+    .saved-actions .btn--danger[data-arm] { background:var(--warn); color:#fff; }
+    .flash { animation:flash 1.2s ease-out; }
+    @keyframes flash { 0% { outline:3px solid var(--gold); outline-offset:0; } 100% { outline:3px solid transparent; outline-offset:6px; } }
+    #btnSave.saved { background:var(--paper); color:var(--ink); }
     @media (max-width: 980px) { .layout { grid-template-columns:1fr; } .summary { position:static; } .doorline { grid-template-columns:1fr 90px 36px; } }
     @media print {
       .top, .tabs, .tools, .adv, .btn, #settingsPane, #calPane, .room-head button, .noprint, .doorline .x { display:none !important; }
@@ -106,6 +111,7 @@
     <h1>Job <em>estimator</em></h1>
     <div class="tools">
       <button class="btn btn--light btn--sm" id="btnNew">New estimate</button>
+      <button class="btn btn--light btn--sm" id="btnSave">Save</button>
       <button class="btn btn--light btn--sm" id="btnCopy">Copy summary</button>
       <button class="btn btn--gold btn--sm" id="btnPrint">Print / PDF</button>
     </div>
@@ -115,6 +121,7 @@
 <main class="wrap">
   <div class="tabs noprint">
     <button class="on" data-tab="estimate">Estimate</button>
+    <button data-tab="saved">Saved estimates <span id="savedCount"></span></button>
     <button data-tab="cal">Model check (6 past jobs)</button>
     <button data-tab="settings">Rates &amp; drivers</button>
   </div>
@@ -149,6 +156,14 @@
     </div>
   </section>
 
+  <section class="pane" id="savedPane" hidden>
+    <div class="card">
+      <h2>Saved estimates <small>This browser only</small></h2>
+      <p class="note">Save keeps the estimate you're working on under its job name. Open brings it back to the Estimate tab. Duplicate makes a copy to price an option. Saved estimates live in this browser, so save on the computer you'll use to look them up, and use Copy summary or Print for anything you need to keep elsewhere.</p>
+      <div class="cal-wrap"><table class="cal" id="savedTable"></table></div>
+    </div>
+  </section>
+
   <section class="pane" id="calPane" hidden>
     <div class="card">
       <h2>Model vs. the six real breakdowns <small>Drawing quantities in, hours and hardware modeled</small></h2>
@@ -178,7 +193,7 @@
   const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
   const fmt2 = (n, d) => Number(n).toLocaleString('en-US', { maximumFractionDigits: d === undefined ? 2 : d });
   const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
-  const LS_CFG = 'iws-estimator-config-v2', LS_JOB = 'iws-estimator-job-v2';
+  const LS_CFG = 'iws-estimator-config-v2', LS_JOB = 'iws-estimator-job-v2', LS_SAVED = 'iws-estimator-saved-v2';
   const deep = (o) => JSON.parse(JSON.stringify(o));
   const defaults = () => ({ rates: deep(M.RATES), drivers: deep(M.DRIVERS), doors: deep(M.DOOR_STYLES), boxes: deep(M.DRAWER_BOXES), finishes: deep(M.FINISH_OPTIONS) });
   let cfg; try { cfg = JSON.parse(localStorage.getItem(LS_CFG)) || defaults(); } catch { cfg = defaults(); }
@@ -186,7 +201,10 @@
   function saveCfg() { try { localStorage.setItem(LS_CFG, JSON.stringify(cfg)); } catch {} }
 
   const newRoom = (name) => ({ name: name || 'Kitchen', cabinets: 12, construction: 'frameless', defaultDoorStyle: 'shaker_paint', doorLines: [], drawers: '', drawerBox: 'vortex', faceFrameParts: '', organizers: '', specialMaterial: '', installMode: 'percab', installHrs: '', installLump: '', travel: '', otherAddons: '', otherLabel: 'Other add-ons', overrides: {} });
-  const newJob = () => ({ name: '', finish: 'painted', finishQuote: '', overheadPct: '', setupHrs: '', drawerAsm: true, rooms: [newRoom('Kitchen')] });
+  const newJob = () => ({ id: null, name: '', finish: 'painted', finishQuote: '', overheadPct: '', setupHrs: '', drawerAsm: true, rooms: [newRoom('Kitchen')] });
+  let saved; try { saved = JSON.parse(localStorage.getItem(LS_SAVED)) || []; } catch { saved = []; }
+  function saveList() { try { localStorage.setItem(LS_SAVED, JSON.stringify(saved)); } catch {} updateSavedCount(); }
+  function updateSavedCount() { const el = $('#savedCount'); if (el) el.textContent = saved.length ? `(${saved.length})` : ''; }
   let job; try { job = JSON.parse(localStorage.getItem(LS_JOB)) || newJob(); } catch { job = newJob(); }
   function saveJob() { try { localStorage.setItem(LS_JOB, JSON.stringify(job)); } catch {} }
 
@@ -292,11 +310,30 @@
   });
   function hydrateJob() { $('#jobName').value = job.name || ''; $('#finish').innerHTML = opts(cfg.finishes, job.finish); $('#finishQuote').value = job.finishQuote; $('#overheadPct').value = job.overheadPct; $('#overheadPct').placeholder = cfg.rates.overheadPct; $('#setupHrs').value = job.setupHrs; $('#setupHrs').placeholder = cfg.drivers.shopSetupHrs; $('#drawerAsm').value = job.drawerAsm === false ? 'off' : 'on'; }
 
-  document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
-    document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('on', x === b));
-    ['estimate', 'cal', 'settings'].forEach((p) => { $('#' + p + 'Pane').hidden = b.dataset.tab !== p; });
-    if (b.dataset.tab === 'cal') renderCal();
-  }));
+  // ---- saved estimates ----
+  function saveCurrent(asNew) {
+    if (!job.name || !job.name.trim()) { const n = $('#jobName'); n.focus(); n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash'); n.placeholder = 'Give it a name first'; return; }
+    const est = M.estimateJob(job, cfg);
+    if (asNew || !job.id) job.id = 'e' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    const entry = { id: job.id, name: job.name.trim(), savedAt: new Date().toISOString(), total: est.total, cabinets: est.cabinets, rooms: est.rooms.map((r) => r.name).join(', '), job: deep(job) };
+    const i = saved.findIndex((x) => x.id === job.id); if (i >= 0) saved[i] = entry; else saved.unshift(entry);
+    saveList(); saveJob(); renderSaved();
+    const b = $('#btnSave'); b.textContent = 'Saved'; b.classList.add('saved'); setTimeout(() => { b.textContent = 'Save'; b.classList.remove('saved'); }, 1500);
+  }
+  function showTab(name) { document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('on', x.dataset.tab === name)); ['estimate', 'saved', 'cal', 'settings'].forEach((p) => { $('#' + p + 'Pane').hidden = name !== p; }); if (name === 'cal') renderCal(); if (name === 'saved') renderSaved(); }
+  function renderSaved() {
+    updateSavedCount();
+    if (!saved.length) { $('#savedTable').innerHTML = '<tr><td class="note" style="padding:14px 8px">Nothing saved yet. Name an estimate and press Save.</td></tr>'; return; }
+    $('#savedTable').innerHTML = `<tr><th>Estimate</th><th class="n">Cabinets</th><th class="n">Total</th><th>Saved</th><th></th></tr>` + saved.map((e) => `<tr ${e.id === job.id ? 'style="background:var(--paper-2)"' : ''}><td><strong>${esc(e.name)}</strong>${e.id === job.id ? ' <small style="display:inline">(open now)</small>' : ''}<small>${esc(e.rooms)}</small></td><td class="n">${e.cabinets}</td><td class="n">${fmt(e.total)}</td><td>${new Date(e.savedAt).toLocaleDateString()} ${new Date(e.savedAt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</td><td><div class="saved-actions"><button class="btn btn--xs" data-open="${e.id}">Open</button><button class="btn btn--xs" data-dup="${e.id}">Duplicate</button><button class="btn btn--xs btn--danger" data-rm="${e.id}">Delete</button></div></td></tr>`).join('');
+  }
+  $('#savedTable').addEventListener('click', (e) => {
+    const o = e.target.closest('[data-open]'); if (o) { const s = saved.find((x) => x.id === o.dataset.open); if (s) { job = deep(s.job); job.id = s.id; saveJob(); hydrateJob(); renderRooms(); showTab('estimate'); window.scrollTo(0, 0); } return; }
+    const d = e.target.closest('[data-dup]'); if (d) { const s = saved.find((x) => x.id === d.dataset.dup); if (s) { job = deep(s.job); job.id = null; job.name = s.name + ' (copy)'; saveJob(); hydrateJob(); renderRooms(); saveCurrent(true); showTab('estimate'); window.scrollTo(0, 0); } return; }
+    const r = e.target.closest('[data-rm]'); if (r) { if (r.dataset.arm) { const id = r.dataset.rm; saved = saved.filter((x) => x.id !== id); if (job.id === id) { job.id = null; saveJob(); } saveList(); renderSaved(); } else { r.dataset.arm = '1'; r.textContent = 'Click again to delete'; setTimeout(() => { r.textContent = 'Delete'; delete r.dataset.arm; }, 3000); } }
+  });
+  $('#btnSave').addEventListener('click', () => saveCurrent(false));
+
+  document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => showTab(b.dataset.tab)));
 
   function renderCal() {
     const rows = M.calibrate(cfg); let mape = 0;
@@ -324,7 +361,7 @@
   $('#btnReset').addEventListener('click', () => { if (confirm('Reset every rate and driver to the fitted defaults?')) { cfg = defaults(); applyCfg(); saveCfg(); renderSettings(); hydrateJob(); renderRooms(); } });
   $('#btnExport').addEventListener('click', () => { const blob = new Blob([JSON.stringify(cfg, null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'iws-estimator-settings.json'; a.click(); });
 
-  applyCfg(); hydrateJob(); renderSettings(); renderRooms();
+  applyCfg(); hydrateJob(); renderSettings(); renderRooms(); updateSavedCount();
 })();
 </script>
 </body>
