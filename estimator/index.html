@@ -13,74 +13,80 @@
     body { margin:0; font-family:"Manrope","Helvetica Neue",Arial,sans-serif; font-size:15px; line-height:1.5; color:var(--ink); background:var(--paper); }
     h1,h2,h3 { font-family:"Cormorant Garamond",Georgia,serif; font-weight:500; margin:0; line-height:1.1; }
     button { font:inherit; cursor:pointer; }
-    input, select { font:inherit; font-size:14px; padding:8px 10px; border:1px solid var(--line); background:var(--cream); color:var(--ink); border-radius:0; width:100%; }
+    input, select { font:inherit; font-size:14px; padding:8px 10px; border:1px solid var(--line); background:var(--cream); color:var(--ink); border-radius:0; width:100%; min-width:0; }
+    input::placeholder { color:#a39a90; font-style:italic; }
     input:focus, select:focus { outline:2px solid var(--gold); outline-offset:-1px; }
-    label { display:grid; gap:4px; font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:#5c534b; }
+    label { display:grid; gap:4px; font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:#5c534b; min-width:0; }
+    label .hint { font-weight:400; letter-spacing:0; text-transform:none; color:var(--muted); font-size:.72rem; }
     .top { background:var(--ink); color:var(--paper); padding:14px 0; }
-    .wrap { width:min(1400px, 100% - 40px); margin-inline:auto; }
+    .wrap { width:min(1440px, 100% - 40px); margin-inline:auto; }
     .top .wrap { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
     .brand { display:flex; align-items:center; gap:14px; color:var(--paper); text-decoration:none; }
     .mono-svg { height:40px; width:auto; display:block; }
     .mono-svg text { font-family:"Bodoni Moda",Didot,serif; font-weight:600; }
     .brand span { font-family:"Jost",sans-serif; font-size:.68rem; letter-spacing:.3em; text-transform:uppercase; line-height:1.25; }
     .brand small { display:block; font-size:.82em; letter-spacing:.42em; opacity:.8; margin-top:3px; }
-    .top h1 { font-size:1.6rem; }
-    .top h1 em { color:var(--gold); font-style:italic; }
+    .top h1 { font-size:1.6rem; } .top h1 em { color:var(--gold); font-style:italic; }
     .top .tools { display:flex; gap:8px; flex-wrap:wrap; }
     .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; border:1px solid var(--ink); background:transparent; color:var(--ink); }
     .btn:hover { background:var(--ink); color:var(--paper); }
-    .btn--gold { background:var(--gold); border-color:var(--gold); color:var(--ink); }
-    .btn--gold:hover { background:#e6cf94; border-color:#e6cf94; color:var(--ink); }
-    .btn--light { border-color:rgba(246,241,232,.6); color:var(--paper); }
-    .btn--light:hover { background:var(--paper); color:var(--ink); }
-    .btn--sm { padding:7px 12px; font-size:.64rem; }
-    .btn--danger { border-color:var(--warn); color:var(--warn); }
-    .btn--danger:hover { background:var(--warn); color:#fff; }
-    .layout { display:grid; grid-template-columns: 1fr 400px; gap:28px; align-items:start; padding:28px 0 60px; }
-    .card { background:var(--cream); border:1px solid var(--line); padding:20px; }
+    .btn--gold { background:var(--gold); border-color:var(--gold); color:var(--ink); } .btn--gold:hover { background:#e6cf94; border-color:#e6cf94; color:var(--ink); }
+    .btn--light { border-color:rgba(246,241,232,.6); color:var(--paper); } .btn--light:hover { background:var(--paper); color:var(--ink); }
+    .btn--sm { padding:7px 12px; font-size:.64rem; } .btn--xs { padding:5px 9px; font-size:.6rem; }
+    .btn--danger { border-color:var(--warn); color:var(--warn); } .btn--danger:hover { background:var(--warn); color:#fff; }
+    .layout { display:grid; grid-template-columns:1fr 400px; gap:28px; align-items:start; padding:28px 0 60px; }
+    .card { background:var(--cream); border:1px solid var(--line); padding:20px; min-width:0; }
     .card + .card { margin-top:16px; }
-    .card h2 { font-size:1.5rem; margin-bottom:14px; display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
-    .card h2 small { font-family:"Manrope",sans-serif; font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-2); font-weight:700; }
-    .grid { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+    .card h2 { font-size:1.5rem; margin-bottom:14px; display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .card h2 small { font-family:"Manrope",sans-serif; font-size:.64rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-2); font-weight:700; }
+    .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); }
     .room { border-top:3px solid var(--gold); }
-    .room-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; }
-    .room-head input { font-family:"Cormorant Garamond",serif; font-size:1.5rem; padding:4px 8px; border-color:transparent; background:transparent; }
+    .room-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+    .room-head input { font-family:"Cormorant Garamond",serif; font-size:1.5rem; padding:4px 8px; border-color:transparent; background:transparent; width:auto; max-width:60%; }
     .room-head input:hover, .room-head input:focus { border-color:var(--line); background:var(--paper); }
     .room-sub { font-family:"Cormorant Garamond",serif; font-size:1.4rem; color:var(--walnut); white-space:nowrap; }
-    .adv { margin-top:12px; border-top:1px dashed var(--line); padding-top:12px; }
-    .adv summary { cursor:pointer; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--gold-2); }
-    .adv .grid { margin-top:12px; }
-    .adv label span.model { font-weight:400; letter-spacing:0; text-transform:none; color:var(--muted); font-size:.72rem; }
+    .sub { margin-top:14px; padding-top:12px; border-top:1px dashed var(--line); }
+    .sub h3 { font-family:"Manrope",sans-serif; font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--gold-2); margin-bottom:8px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+    .sub h3 span.note { font-weight:400; letter-spacing:0; text-transform:none; color:var(--muted); }
+    .doorline { display:grid; grid-template-columns:1fr 120px 40px; gap:8px; margin-bottom:6px; align-items:center; }
+    .doorline .x { background:none; border:1px solid var(--line); height:36px; color:var(--muted); }
+    .doorline .x:hover { border-color:var(--warn); color:var(--warn); }
+    .adv summary { cursor:pointer; font-size:.66rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; color:var(--gold-2); }
+    .adv .grid { margin-top:10px; }
     .summary { position:sticky; top:16px; }
     .summary .total { font-family:"Cormorant Garamond",serif; font-size:3.2rem; line-height:1; color:var(--walnut); }
-    .summary .range { color:var(--muted); font-size:.9rem; margin-top:4px; }
+    .summary .range { color:var(--muted); font-size:.88rem; margin-top:4px; }
     .summary table { width:100%; border-collapse:collapse; margin-top:16px; font-size:.92rem; }
-    .summary td { padding:7px 0; border-bottom:1px solid var(--line); }
-    .summary td:last-child { text-align:right; font-variant-numeric:tabular-nums; }
+    .summary td { padding:7px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+    .summary td:last-child { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
     .summary tr.sub td { font-weight:700; }
     .summary tr.tot td { font-family:"Cormorant Garamond",serif; font-size:1.4rem; border-bottom:0; padding-top:12px; }
     .summary .meta { font-size:.8rem; color:var(--muted); margin-top:10px; }
+    .legend { font-size:.72rem; color:var(--muted); margin-top:12px; }
+    .legend i { font-style:italic; }
     #lines { overflow-x:auto; }
-    .lines { width:100%; min-width:600px; border-collapse:collapse; font-size:.85rem; margin-top:10px; }
+    .lines { width:100%; min-width:620px; border-collapse:collapse; font-size:.85rem; margin-top:10px; }
     .lines th, .lines td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
-    .lines th { font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+    .lines th { font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
     .lines td.n, .lines th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
     .lines tr.group td { font-weight:700; background:var(--paper-2); }
+    .lines tr.derived td { color:#6e655c; font-style:italic; }
     .cal { width:100%; border-collapse:collapse; font-size:.9rem; }
     .cal th, .cal td { padding:9px 8px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
-    .cal th { font-size:.64rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+    .cal th { font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
     .cal td.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
     .cal .ok { color:var(--ok); font-weight:700; } .cal .warn { color:var(--warn); font-weight:700; }
-    .cal small { color:var(--muted); display:block; }
-    .settings .grid { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+    .cal small { color:var(--muted); display:block; max-width:52ch; }
+    .settings .grid { grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); }
     .note { font-size:.85rem; color:var(--muted); margin:8px 0 0; }
     .tabs { display:flex; gap:6px; margin-bottom:16px; flex-wrap:wrap; }
     .tabs button { padding:9px 14px; font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; font-weight:700; border:1px solid var(--line); background:transparent; }
     .tabs button.on { background:var(--ink); color:var(--paper); border-color:var(--ink); }
     .pane[hidden] { display:none; }
-    @media (max-width: 980px) { .layout { grid-template-columns:1fr; } .summary { position:static; } }
+    .cal-wrap { overflow-x:auto; }
+    @media (max-width: 980px) { .layout { grid-template-columns:1fr; } .summary { position:static; } .doorline { grid-template-columns:1fr 90px 36px; } }
     @media print {
-      .top, .tabs, .tools, .adv, .btn, #settingsPane, #calPane, .room-head button, .noprint { display:none !important; }
+      .top, .tabs, .tools, .adv, .btn, #settingsPane, #calPane, .room-head button, .noprint, .doorline .x { display:none !important; }
       body { background:#fff; } .layout { grid-template-columns:1fr; padding:0; } .card { border:0; padding:0 0 16px; page-break-inside:avoid; }
       .summary { position:static; } input, select { border:0; background:transparent; padding:0; }
       .print-head { display:block !important; }
@@ -113,7 +119,6 @@
     <button data-tab="settings">Rates &amp; drivers</button>
   </div>
 
-  <!-- ESTIMATE -->
   <section class="pane" id="estimatePane">
     <div class="layout">
       <div>
@@ -123,14 +128,16 @@
           <div class="grid">
             <label>Customer / job name <input id="jobName" placeholder="e.g. Nguyen kitchen"></label>
             <label>Finish <select id="finish"></select></label>
-            <label>Finish quote ($) <input id="finishQuote" type="number" min="0" step="50" placeholder="auto"></label>
-            <label>Overhead &amp; profit (%) <input id="overheadPct" type="number" min="0" step="1"></label>
+            <label>Finisher's quote ($) <span class="hint" id="finishHint"></span><input id="finishQuote" type="number" min="0" step="50"></label>
+            <label>The 50% (overhead &amp; profit) <input id="overheadPct" type="number" min="0" step="1"></label>
+            <label>Job setup hours <span class="hint">drawings, programming, once per job</span><input id="setupHrs" type="number" min="0" step="0.5"></label>
+            <label>Drawer assembly labor <select id="drawerAsm"><option value="on">On every drawer box (2026 template)</option><option value="off">Off</option></select></label>
           </div>
-          <p class="note">Finish is the outsourced finisher's quote and sits outside the overhead %, the way the Steve Robles and Chris Lang breakdowns did it. Leave it blank to use the per-cabinet default from Rates &amp; drivers.</p>
+          <p class="note">Finish always sits outside the 50%, the way the Robles, Lang and Bhimani breakdowns did it. Leave the finisher's quote blank to use the suggested figure based on door area.</p>
         </div>
         <div id="rooms"></div>
         <div style="margin-top:14px" class="noprint"><button class="btn" id="btnAddRoom">+ Add a room</button></div>
-        <div class="card" id="linesCard"><h2>Line items <small>How the number is built</small></h2><div id="lines"></div></div>
+        <div class="card" id="linesCard"><h2>Line items <small>How the number is built</small></h2><div id="lines"></div><p class="legend"><i>Italic lines</i> are modeled from cabinet count and door area. Type the real quantity from the drawing to replace them.</p></div>
       </div>
       <aside class="summary card">
         <h2>Estimate</h2>
@@ -142,41 +149,24 @@
     </div>
   </section>
 
-  <!-- CALIBRATION -->
   <section class="pane" id="calPane" hidden>
     <div class="card">
-      <h2>Model vs. the six real breakdowns <small>Same drivers, real cabinet counts</small></h2>
-      <p class="note">Each row runs a past job through the quick model using only its cabinet counts, construction, door style, drawer boxes and install method, then compares with what IWS actually priced. Aim for every row inside about 10%. Change drivers in the next tab and this updates live.</p>
-      <table class="cal" id="calTable"></table>
+      <h2>Model vs. the six real breakdowns <small>Drawing quantities in, hours and hardware modeled</small></h2>
+      <p class="note">Each row prices a past job the way you would in this app: cabinet count, door area by style, drawer boxes, face-frame parts, inserts and the finisher's quote typed in from the drawing; shop hours, CNC hours, hinges and box material come from the model. "IWS printed" is the total on their PDF. "By app rule" is the same job with the finish outside the 50%, which only changes McCasland and Blair.</p>
+      <div class="cal-wrap"><table class="cal" id="calTable"></table></div>
       <p class="note" id="calSummary"></p>
-      <p class="note">Two jobs (McCasland, Herlinda) priced install as hours instead of per cabinet, so their cabinet counts are estimates. On McCasland and Herlinda the finish quote sat inside the 50% overhead; on the other three it sat outside. Bhimani used 63.6% overhead instead of 50%.</p>
+      <p class="note">The 2025 jobs (McCasland, Lang, Blair, Bhimani) did not carry the drawer assembly line the 2026 template adds, so they read a few percent high here on purpose: the app prices the way the current template does. Cabinet counts on McCasland and Blair are estimates.</p>
     </div>
   </section>
 
-  <!-- SETTINGS -->
   <section class="pane settings" id="settingsPane" hidden>
-    <div class="card">
-      <h2>Rate card <small>From the breakdowns</small></h2>
-      <div class="grid" id="rateGrid"></div>
-    </div>
-    <div class="card">
-      <h2>Per-cabinet drivers <small>Fitted from past jobs</small></h2>
-      <div class="grid" id="driverGrid"></div>
-      <p class="note">Observed per cabinet on rooms with known counts: material $124 to $151, hardware $38 to $41, door area 4 to 9 sq ft, drawers 0.45 to 0.70, shop 1.1 to 1.3 hours (1.9 on the newest template), machining 0.5 to 0.85 hours, face-frame parts 3.6 to 4.9 on inset.</p>
-    </div>
-    <div class="card">
-      <h2>Door styles ($ per sq ft) <small>Rate and line markup</small></h2>
-      <div class="grid" id="doorGrid"></div>
-    </div>
-    <div class="card">
-      <h2>Drawer boxes, material tiers, finish <small>Per unit</small></h2>
-      <div class="grid" id="miscGrid"></div>
-      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn btn--sm" id="btnExport">Export settings (JSON)</button>
-        <button class="btn btn--sm btn--danger" id="btnReset">Reset to fitted defaults</button>
-      </div>
-      <p class="note">Settings save in this browser automatically. Export before switching computers.</p>
-    </div>
+    <div class="card"><h2>Rate card <small>From the breakdowns</small></h2><div class="grid" id="rateGrid"></div></div>
+    <div class="card"><h2>Drivers <small>Fitted from six jobs</small></h2><div class="grid" id="driverGrid"></div>
+      <p class="note">Shop hours fit 3.9 per job plus 1.13 per cabinet across the six jobs. CNC fits 0.68 per cabinet. Hinges run 0.35 per square foot of door on the three biggest jobs. Box material runs $112 to $160 per cabinet before specialty items.</p></div>
+    <div class="card"><h2>Door styles ($ per sq ft, markup %) <small>Buyout lines</small></h2><div class="grid" id="doorGrid"></div></div>
+    <div class="card"><h2>Drawer boxes and finish <small>Per unit</small></h2><div class="grid" id="miscGrid"></div>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn--sm" id="btnExport">Export settings (JSON)</button><button class="btn btn--sm btn--danger" id="btnReset">Reset to fitted defaults</button></div>
+      <p class="note">Settings save in this browser automatically.</p></div>
   </section>
 </main>
 
@@ -187,71 +177,71 @@
   const $ = (s, r) => (r || document).querySelector(s);
   const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
   const fmt2 = (n, d) => Number(n).toLocaleString('en-US', { maximumFractionDigits: d === undefined ? 2 : d });
-  const LS_CFG = 'iws-estimator-config-v1', LS_JOB = 'iws-estimator-job-v1';
-
-  // ---- config (rates, drivers, catalogs) with persistence ----
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+  const LS_CFG = 'iws-estimator-config-v2', LS_JOB = 'iws-estimator-job-v2';
   const deep = (o) => JSON.parse(JSON.stringify(o));
-  const defaults = () => ({ rates: deep(M.RATES), drivers: deep(M.DRIVERS), doors: deep(M.DOOR_STYLES), boxes: deep(M.DRAWER_BOXES), tiers: deep(M.MATERIAL_TIERS), finishes: deep(M.FINISH_OPTIONS) });
+  const defaults = () => ({ rates: deep(M.RATES), drivers: deep(M.DRIVERS), doors: deep(M.DOOR_STYLES), boxes: deep(M.DRAWER_BOXES), finishes: deep(M.FINISH_OPTIONS) });
   let cfg; try { cfg = JSON.parse(localStorage.getItem(LS_CFG)) || defaults(); } catch { cfg = defaults(); }
-  function applyCfg() { // push catalog edits into the model's shared lists
-    ['doors','boxes','tiers','finishes'].forEach((k) => { const list = { doors: M.DOOR_STYLES, boxes: M.DRAWER_BOXES, tiers: M.MATERIAL_TIERS, finishes: M.FINISH_OPTIONS }[k]; cfg[k].forEach((it, i) => Object.assign(list[i], it)); });
-  }
+  function applyCfg() { [['doors', M.DOOR_STYLES], ['boxes', M.DRAWER_BOXES], ['finishes', M.FINISH_OPTIONS]].forEach(([k, list]) => cfg[k].forEach((it, i) => Object.assign(list[i], it))); }
   function saveCfg() { try { localStorage.setItem(LS_CFG, JSON.stringify(cfg)); } catch {} }
 
-  // ---- job state ----
-  const newRoom = (name) => ({ name: name || 'Kitchen', cabinets: 12, construction: 'frameless', doorStyle: 'shaker_paint', materialTier: 'paint', drawerBox: 'dovetail', installMode: 'percab', installHrs: '', installLump: '', travel: '', organizers: '', otherAddons: '', otherLabel: 'Other add-ons', overrides: {} });
-  const newJob = () => ({ name: '', finish: 'painted', finishQuote: '', overheadPct: '', rooms: [newRoom('Kitchen')] });
+  const newRoom = (name) => ({ name: name || 'Kitchen', cabinets: 12, construction: 'frameless', defaultDoorStyle: 'shaker_paint', doorLines: [], drawers: '', drawerBox: 'vortex', faceFrameParts: '', organizers: '', specialMaterial: '', installMode: 'percab', installHrs: '', installLump: '', travel: '', otherAddons: '', otherLabel: 'Other add-ons', overrides: {} });
+  const newJob = () => ({ name: '', finish: 'painted', finishQuote: '', overheadPct: '', setupHrs: '', drawerAsm: true, rooms: [newRoom('Kitchen')] });
   let job; try { job = JSON.parse(localStorage.getItem(LS_JOB)) || newJob(); } catch { job = newJob(); }
   function saveJob() { try { localStorage.setItem(LS_JOB, JSON.stringify(job)); } catch {} }
 
-  // ---- render rooms ----
-  const opts = (list, sel, fmtFn) => list.map((o) => `<option value="${o.id}" ${o.id === sel ? 'selected' : ''}>${fmtFn ? fmtFn(o) : o.label}</option>`).join('');
+  const opts = (list, sel, f) => list.map((o) => `<option value="${o.id}" ${o.id === sel ? 'selected' : ''}>${f ? f(o) : o.label}</option>`).join('');
+  const doorOpt = (o) => `${o.label} · $${o.rate}/sf`;
+
   function renderRooms() {
     const est = M.estimateJob(job, cfg);
     $('#rooms').innerHTML = job.rooms.map((r, i) => {
-      const e = est.rooms[i]; const q = e.quantities; const ov = r.overrides || {};
-      const qi = (key, label, unit, d) => `<label>${label} <span class="model">model: ${fmt2(q[key], d)} ${unit}</span><input type="number" step="any" data-ov="${key}" data-i="${i}" value="${ov[key] ?? ''}" placeholder="${fmt2(q[key], d)}"></label>`;
+      const e = est.rooms[i], q = e.quantities, ov = r.overrides || {}, inset = r.construction === 'inset';
+      const qi = (key, label, unit, d) => `<label>${label} <span class="hint">model: ${fmt2(q[key], d)} ${unit}</span><input type="number" step="any" data-ov="${key}" data-i="${i}" value="${ov[key] ?? ''}" placeholder="${fmt2(q[key], d)}"></label>`;
+      const doorRows = (r.doorLines || []).map((l, k) => `<div class="doorline"><select data-dl="${i}" data-k="${k}" data-f="style">${opts(cfg.doors, l.style, doorOpt)}</select><input type="number" step="0.1" min="0" placeholder="sq ft" data-dl="${i}" data-k="${k}" data-f="sqft" value="${l.sqft ?? ''}"><button class="x" data-dldel="${i}" data-k="${k}" title="Remove">&times;</button></div>`).join('');
       return `<div class="card room" data-i="${i}">
         <div class="room-head">
           <input data-f="name" data-i="${i}" value="${esc(r.name)}" aria-label="Room name">
-          <div style="display:flex;align-items:center;gap:12px"><span class="room-sub">${fmt(e.subtotal)} <small style="font-family:Manrope;font-size:.7rem;color:var(--muted)">before overhead</small></span>${job.rooms.length > 1 ? `<button class="btn btn--sm btn--danger" data-del="${i}">Remove</button>` : ''}</div>
+          <div style="display:flex;align-items:center;gap:12px"><span class="room-sub">${fmt(e.subtotal)} <small style="font-family:Manrope;font-size:.7rem;color:var(--muted)">before the 50%</small></span>${job.rooms.length > 1 ? `<button class="btn btn--sm btn--danger" data-del="${i}">Remove</button>` : ''}</div>
         </div>
         <div class="grid">
           <label>Cabinets <input type="number" min="0" step="1" data-f="cabinets" data-i="${i}" value="${r.cabinets}"></label>
-          <label>Construction <select data-f="construction" data-i="${i}"><option value="frameless" ${r.construction==='frameless'?'selected':''}>Frameless</option><option value="inset" ${r.construction==='inset'?'selected':''}>Inset / face frame</option></select></label>
-          <label>Door style <select data-f="doorStyle" data-i="${i}">${opts(cfg.doors, r.doorStyle, (o) => `${o.label} · $${o.rate}/sf`)}</select></label>
-          <label>Box material <select data-f="materialTier" data-i="${i}">${opts(cfg.tiers, r.materialTier)}</select></label>
-          <label>Drawer boxes <select data-f="drawerBox" data-i="${i}">${opts(cfg.boxes, r.drawerBox, (o) => `${o.label} · $${o.rate}`)}</select></label>
+          <label>Construction <select data-f="construction" data-i="${i}"><option value="frameless" ${!inset ? 'selected' : ''}>Frameless</option><option value="inset" ${inset ? 'selected' : ''}>Inset / face frame</option></select></label>
+          <label>Drawer boxes <span class="hint">count, blank = ${fmt2(r.cabinets * cfg.drivers.drawersPerCab, 0)}</span><input type="number" min="0" step="1" data-f="drawers" data-i="${i}" value="${r.drawers}" placeholder="${fmt2(r.cabinets * cfg.drivers.drawersPerCab, 0)}"></label>
+          <label>Drawer box type <select data-f="drawerBox" data-i="${i}">${opts(cfg.boxes, r.drawerBox, (o) => `${o.label} · $${o.rate}`)}</select></label>
+          <label>Face frame parts <span class="hint">${inset ? 'blank = ' + fmt2(r.cabinets * cfg.drivers.faceFramePartsPerCab, 0) : 'usually 0 on frameless'}</span><input type="number" min="0" step="1" data-f="faceFrameParts" data-i="${i}" value="${r.faceFrameParts}" placeholder="${inset ? fmt2(r.cabinets * cfg.drivers.faceFramePartsPerCab, 0) : '0'}"></label>
           <label>Install <select data-f="installMode" data-i="${i}"><option value="percab" ${r.installMode==='percab'?'selected':''}>Per cabinet ($${cfg.rates.installPerCab} +${cfg.rates.installMarkupPct}%)</option><option value="hours" ${r.installMode==='hours'?'selected':''}>By hours</option><option value="lump" ${r.installMode==='lump'?'selected':''}>Lump sum</option><option value="none" ${r.installMode==='none'?'selected':''}>No install</option></select></label>
           ${r.installMode==='hours' ? `<label>Install hours <input type="number" step="0.5" data-f="installHrs" data-i="${i}" value="${r.installHrs}"></label>` : ''}
           ${r.installMode==='lump' ? `<label>Install lump sum ($) <input type="number" step="50" data-f="installLump" data-i="${i}" value="${r.installLump}"></label>` : ''}
+          <label>Inserts, organizers, pull-outs ($) <input type="number" step="10" data-f="organizers" data-i="${i}" value="${r.organizers}" placeholder="0"></label>
+          <label>Specialty material ($) <span class="hint">open shelving, thick shelves, panels</span><input type="number" step="10" data-f="specialMaterial" data-i="${i}" value="${r.specialMaterial}" placeholder="0"></label>
           <label>Travel ($) <input type="number" step="10" data-f="travel" data-i="${i}" value="${r.travel}" placeholder="0"></label>
-          <label>Organizers / inserts ($) <input type="number" step="10" data-f="organizers" data-i="${i}" value="${r.organizers}" placeholder="0"></label>
           <label>Other add-ons ($) <input type="number" step="10" data-f="otherAddons" data-i="${i}" value="${r.otherAddons}" placeholder="0"></label>
         </div>
-        <details class="adv">
-          <summary>Adjust quantities (override the model when you know the real numbers)</summary>
+        <div class="sub">
+          <h3>Doors and drawer fronts, from the drawing <span class="note">${(r.doorLines||[]).length ? fmt2(e.doorSqFt, 1) + ' sq ft entered' : 'nothing entered yet, modeling ' + fmt2(e.doorSqFt, 0) + ' sq ft of'}</span>${(r.doorLines||[]).length ? '' : `<select data-f="defaultDoorStyle" data-i="${i}" style="width:auto;max-width:260px">${opts(cfg.doors, r.defaultDoorStyle, doorOpt)}</select>`}</h3>
+          ${doorRows}
+          <button class="btn btn--xs" data-dladd="${i}">+ Add a door line</button>
+        </div>
+        <details class="adv sub">
+          <summary>Modeled quantities (override when you know the real numbers)</summary>
           <div class="grid">
-            ${qi('doorSqFt', 'Door + panel area', 'sq ft', 1)}
-            ${qi('drawers', 'Drawer boxes', 'ea', 1)}
             ${qi('shopHrs', 'Shop labor', 'hrs', 1)}
             ${qi('machiningHrs', 'Machining', 'hrs', 1)}
-            ${r.construction==='inset' ? qi('faceFrameParts', 'Face frame parts', 'ea', 0) : ''}
-            ${r.construction==='inset' ? qi('drawerAsmHrs', 'Drawer assembly', 'hrs', 1) : ''}
-            ${qi('material', 'Material budget', '$', 0)}
-            ${qi('hardware', 'Hardware budget', '$', 0)}
+            ${qi('drawerAsmHrs', 'Drawer assembly', 'hrs', 1)}
+            ${qi('hinges', 'Hinges', 'ea', 0)}
+            ${qi('material', 'Box material', '$', 0)}
           </div>
         </details>
       </div>`;
     }).join('');
     renderSummary(est);
   }
-  function esc(s) { return String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c])); }
 
   function renderSummary(est) {
     est = est || M.estimateJob(job, cfg);
     $('#total').textContent = fmt(est.total);
-    $('#range').textContent = `Likely range ${fmt(est.low)} to ${fmt(est.high)} · ${est.cabinets} cabinets · ${fmt(est.perCab)} per cabinet`;
+    $('#range').textContent = `Likely range ${fmt(est.low)} to ${fmt(est.high)} · ${est.cabinets} cabinets · ${fmt2(est.doorSqFt, 0)} sq ft of door · ${fmt(est.perCab)} per cabinet`;
     const B = est.budgets;
     $('#summaryTable').innerHTML = `
       <tr><td>Material budget</td><td>${fmt(B.Material)}</td></tr>
@@ -259,66 +249,68 @@
       <tr><td>Buyout budget (doors, drawer boxes)</td><td>${fmt(B.Buyout)}</td></tr>
       <tr><td>Labor budget (shop, CNC, install)</td><td>${fmt(B.Labor)}</td></tr>
       <tr class="sub"><td>Subtotal</td><td>${fmt(est.subtotal)}</td></tr>
-      <tr><td>Overhead &amp; profit (${fmt2(est.overheadPct, 1)}%)</td><td>${fmt(est.overhead)}</td></tr>
-      <tr><td>Finish: ${est.finish.label}${job.finishQuote === '' ? ` <small style="color:var(--muted)">(${fmt(est.finishPerCab)}/cab)</small>` : ''}</td><td>${fmt(est.finishQuote)}</td></tr>
+      <tr><td>The 50% (${fmt2(est.overheadPct, 1)}%)</td><td>${fmt(est.overhead)}</td></tr>
+      <tr><td>Finish: ${est.finish.label}${est.finishEntered ? '' : ` <small style="color:var(--muted)">(suggested, ${fmt2(est.doorSqFt,0)} sq ft × $${fmt2(job.finishPerDoorSqFt ?? est.finish.perDoorSqFt, 0)})</small>`}</td><td>${fmt(est.finishQuote)}</td></tr>
       <tr class="tot"><td>Total</td><td>${fmt(est.total)}</td></tr>`;
-    $('#meta').textContent = job.name ? job.name : 'Untitled estimate';
+    $('#meta').textContent = job.name || 'Untitled estimate';
+    $('#finishHint').textContent = `blank = suggested ${fmt(est.finishSuggested)}`;
     $('#printHead').innerHTML = `${esc(job.name || 'Estimate')}<small>Interior Woodwork Specialist · ${new Date().toLocaleDateString()} · internal estimate, not a customer quote</small>`;
-    // line items
     let html = '';
     est.rooms.forEach((r) => {
-      html += `<table class="lines"><tr class="group"><td colspan="5">${esc(r.name)} · ${r.cabinets} cabinets · ${r.construction}</td><td class="n">${fmt(r.subtotal)}</td></tr>
-        <tr><th>Budget</th><th>Item</th><th class="n">Qty</th><th class="n">Rate</th><th class="n">Markup</th><th class="n">Total</th></tr>`;
-      r.lines.forEach((l) => { html += `<tr><td>${l.group}</td><td>${esc(l.label)}</td><td class="n">${fmt2(l.qty, 1)} ${l.unit}</td><td class="n">${fmt2(l.rate, 2)}</td><td class="n">${l.markupPct ? l.markupPct + '%' : ''}</td><td class="n">${fmt(l.total)}</td></tr>`; });
+      html += `<table class="lines"><tr class="group"><td colspan="5">${esc(r.name)} · ${r.cabinets} cabinets · ${r.construction}</td><td class="n">${fmt(r.subtotal)}</td></tr><tr><th>Budget</th><th>Item</th><th class="n">Qty</th><th class="n">Rate</th><th class="n">Markup</th><th class="n">Total</th></tr>`;
+      r.lines.forEach((l) => { html += `<tr class="${l.derived ? 'derived' : ''}"><td>${l.group}</td><td>${esc(l.label)}</td><td class="n">${fmt2(l.qty, 1)} ${l.unit}</td><td class="n">${fmt2(l.rate, 2)}</td><td class="n">${l.markupPct ? l.markupPct + '%' : ''}</td><td class="n">${fmt(l.total)}</td></tr>`; });
       html += '</table>';
     });
     $('#lines').innerHTML = html;
   }
 
-  // ---- events ----
+  const numOrBlank = (t) => (t.value === '' ? '' : Number(t.value));
   $('#rooms').addEventListener('input', (e) => {
-    const t = e.target; const i = Number(t.dataset.i);
-    if (t.dataset.f) { job.rooms[i][t.dataset.f] = t.type === 'number' ? (t.value === '' ? '' : Number(t.value)) : t.value; }
-    if (t.dataset.ov) { job.rooms[i].overrides = job.rooms[i].overrides || {}; if (t.value === '') delete job.rooms[i].overrides[t.dataset.ov]; else job.rooms[i].overrides[t.dataset.ov] = Number(t.value); }
+    const t = e.target; const i = Number(t.dataset.i ?? t.dataset.dl);
+    if (t.dataset.dl !== undefined) { const l = job.rooms[i].doorLines[Number(t.dataset.k)]; l[t.dataset.f] = t.dataset.f === 'sqft' ? numOrBlank(t) : t.value; }
+    else if (t.dataset.f) { job.rooms[i][t.dataset.f] = t.type === 'number' ? numOrBlank(t) : t.value; }
+    else if (t.dataset.ov) { const o = job.rooms[i].overrides = job.rooms[i].overrides || {}; if (t.value === '') delete o[t.dataset.ov]; else o[t.dataset.ov] = Number(t.value); }
     saveJob();
-    if (t.tagName === 'SELECT') renderRooms(); else { renderSummary(); $$updateRoomSubs(); }
+    if (t.tagName === 'SELECT' && t.dataset.f !== 'style') renderRooms(); else { renderSummary(); refreshRoomSubs(); }
   });
-  function $$updateRoomSubs() { const est = M.estimateJob(job, cfg); document.querySelectorAll('.room').forEach((el, i) => { const s = el.querySelector('.room-sub'); if (s && est.rooms[i]) s.firstChild.textContent = fmt(est.rooms[i].subtotal) + ' '; }); }
-  $('#rooms').addEventListener('click', (e) => { const b = e.target.closest('[data-del]'); if (b) { job.rooms.splice(Number(b.dataset.del), 1); saveJob(); renderRooms(); } });
+  function refreshRoomSubs() { const est = M.estimateJob(job, cfg); document.querySelectorAll('.room').forEach((el, i) => { const s = el.querySelector('.room-sub'); if (s && est.rooms[i]) s.firstChild.textContent = fmt(est.rooms[i].subtotal) + ' '; const n = el.querySelector('.sub h3 span.note'); if (n && est.rooms[i]) n.textContent = (job.rooms[i].doorLines||[]).length ? fmt2(est.rooms[i].doorSqFt, 1) + ' sq ft entered' : 'nothing entered yet, modeling ' + fmt2(est.rooms[i].doorSqFt, 0) + ' sq ft of'; }); }
+  $('#rooms').addEventListener('click', (e) => {
+    const del = e.target.closest('[data-del]'); if (del) { job.rooms.splice(Number(del.dataset.del), 1); saveJob(); renderRooms(); return; }
+    const add = e.target.closest('[data-dladd]'); if (add) { const r = job.rooms[Number(add.dataset.dladd)]; r.doorLines = r.doorLines || []; r.doorLines.push({ style: r.defaultDoorStyle || 'shaker_paint', sqft: '' }); saveJob(); renderRooms(); const inputs = document.querySelectorAll(`[data-dl="${add.dataset.dladd}"][data-f="sqft"]`); if (inputs.length) inputs[inputs.length - 1].focus(); return; }
+    const dd = e.target.closest('[data-dldel]'); if (dd) { job.rooms[Number(dd.dataset.dldel)].doorLines.splice(Number(dd.dataset.k), 1); saveJob(); renderRooms(); }
+  });
   $('#btnAddRoom').addEventListener('click', () => { const names = ['Kitchen', 'Bathroom', 'Laundry', 'Pantry', 'Office', 'Closet', 'Entertainment wall']; job.rooms.push(newRoom(names[job.rooms.length % names.length])); saveJob(); renderRooms(); });
-  ['jobName', 'finishQuote', 'overheadPct'].forEach((id) => $('#' + id).addEventListener('input', (e) => { const k = id === 'jobName' ? 'name' : id; job[k] = e.target.value === '' ? '' : (id === 'jobName' ? e.target.value : Number(e.target.value)); saveJob(); renderSummary(); }));
+  ['jobName', 'finishQuote', 'overheadPct', 'setupHrs'].forEach((id) => $('#' + id).addEventListener('input', (e) => { const k = id === 'jobName' ? 'name' : id; job[k] = id === 'jobName' ? e.target.value : numOrBlank(e.target); saveJob(); renderSummary(); refreshRoomSubs(); }));
   $('#finish').addEventListener('change', (e) => { job.finish = e.target.value; saveJob(); renderSummary(); });
+  $('#drawerAsm').addEventListener('change', (e) => { job.drawerAsm = e.target.value === 'on'; saveJob(); renderRooms(); });
   $('#btnNew').addEventListener('click', () => { if (confirm('Start a new estimate? The current one will be cleared.')) { job = newJob(); saveJob(); hydrateJob(); renderRooms(); } });
   $('#btnPrint').addEventListener('click', () => window.print());
   $('#btnCopy').addEventListener('click', () => {
     const est = M.estimateJob(job, cfg); const B = est.budgets;
-    const txt = [`IWS estimate: ${job.name || 'Untitled'}`, ...est.rooms.map((r) => `  ${r.name}: ${r.cabinets} cabinets, ${r.construction}, ${fmt(r.subtotal)}`), `Material ${fmt(B.Material)} · Hardware ${fmt(B.Hardware)} · Buyout ${fmt(B.Buyout)} · Labor ${fmt(B.Labor)}`, `Subtotal ${fmt(est.subtotal)} + overhead ${fmt2(est.overheadPct,1)}% ${fmt(est.overhead)} + finish ${fmt(est.finishQuote)}`, `TOTAL ${fmt(est.total)} (range ${fmt(est.low)} to ${fmt(est.high)})`].join('\n');
+    const txt = [`IWS estimate: ${job.name || 'Untitled'}`, ...est.rooms.map((r) => `  ${r.name}: ${r.cabinets} cabinets, ${r.construction}, ${fmt2(r.doorSqFt,0)} sq ft door, ${fmt(r.subtotal)}`), `Material ${fmt(B.Material)} · Hardware ${fmt(B.Hardware)} · Buyout ${fmt(B.Buyout)} · Labor ${fmt(B.Labor)}`, `Subtotal ${fmt(est.subtotal)} + ${fmt2(est.overheadPct,1)}% ${fmt(est.overhead)} + finish ${fmt(est.finishQuote)}`, `TOTAL ${fmt(est.total)} (range ${fmt(est.low)} to ${fmt(est.high)})`].join('\n');
     navigator.clipboard?.writeText(txt).then(() => { $('#btnCopy').textContent = 'Copied'; setTimeout(() => ($('#btnCopy').textContent = 'Copy summary'), 1500); });
   });
-  function hydrateJob() { $('#jobName').value = job.name || ''; $('#finish').innerHTML = opts(cfg.finishes, job.finish); $('#finishQuote').value = job.finishQuote; $('#overheadPct').value = job.overheadPct; $('#overheadPct').placeholder = cfg.rates.overheadPct; }
+  function hydrateJob() { $('#jobName').value = job.name || ''; $('#finish').innerHTML = opts(cfg.finishes, job.finish); $('#finishQuote').value = job.finishQuote; $('#overheadPct').value = job.overheadPct; $('#overheadPct').placeholder = cfg.rates.overheadPct; $('#setupHrs').value = job.setupHrs; $('#setupHrs').placeholder = cfg.drivers.shopSetupHrs; $('#drawerAsm').value = job.drawerAsm === false ? 'off' : 'on'; }
 
-  // ---- tabs ----
   document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('.tabs button').forEach((x) => x.classList.toggle('on', x === b));
     ['estimate', 'cal', 'settings'].forEach((p) => { $('#' + p + 'Pane').hidden = b.dataset.tab !== p; });
     if (b.dataset.tab === 'cal') renderCal();
   }));
 
-  // ---- calibration ----
   function renderCal() {
     const rows = M.calibrate(cfg); let mape = 0;
-    $('#calTable').innerHTML = `<tr><th>Job</th><th class="n">Cabinets</th><th class="n">IWS actual</th><th class="n">Model</th><th class="n">Error</th></tr>` + rows.map((r) => { mape += Math.abs(r.errorPct); return `<tr><td>${r.job}<small>${r.note}</small></td><td class="n">${r.cabinets}</td><td class="n">${fmt(r.actual)}</td><td class="n">${fmt(r.model)}</td><td class="n ${Math.abs(r.errorPct) <= 10 ? 'ok' : 'warn'}">${r.errorPct > 0 ? '+' : ''}${fmt2(r.errorPct, 1)}%</td></tr>`; }).join('');
-    $('#calSummary').textContent = `Average absolute error across the jobs: ${fmt2(mape / rows.length, 1)}%.`;
+    $('#calTable').innerHTML = `<tr><th>Job</th><th class="n">Cabinets</th><th class="n">IWS printed</th><th class="n">By app rule</th><th class="n">Model</th><th class="n">Error</th></tr>` + rows.map((r) => { mape += Math.abs(r.errorPct); return `<tr><td>${r.job}<small>${r.note}</small></td><td class="n">${r.cabinets}</td><td class="n">${fmt(r.actual)}</td><td class="n">${fmt(r.actualStd)}</td><td class="n">${fmt(r.model)}</td><td class="n ${Math.abs(r.errorPct) <= 6 ? 'ok' : 'warn'}">${r.errorPct > 0 ? '+' : ''}${fmt2(r.errorPct, 1)}%</td></tr>`; }).join('');
+    $('#calSummary').textContent = `Average absolute error across the six jobs: ${fmt2(mape / rows.length, 1)}%.`;
   }
 
-  // ---- settings ----
-  const RATE_LABELS = { shopLaborHr: 'Shop labor $/hr', machiningHr: 'Machining $/hr', drawerAsmHr: 'Drawer assembly $/hr', faceFramePart: 'Face frame part $', installPerCab: 'Install $/cabinet (or $/hr)', installMarkupPct: 'Install markup %', overheadPct: 'Overhead & profit %', hinge: 'Hinge $', guide: 'Drawer guide $', shelfPin: 'Shelf pin $', pilotScrew: 'Pilot screw $', materialMarkupPct: 'Material markup %', bandingMarkupPct: 'Banding markup %' };
-  const DRIVER_LABELS = { materialPerCab: 'Material $ per cabinet', hardwarePerCab: 'Hardware $ per cabinet', doorSqFtPerCab: 'Door + panel sq ft per cabinet', drawersPerCab: 'Drawer boxes per cabinet', shopHrsPerCab: 'Shop hours per cabinet', machiningHrsPerCab: 'Machining hours per cabinet', faceFramePartsPerCab: 'Face frame parts per cabinet (inset)', drawerAsmHrsPerDrawer: 'Drawer assembly hrs per drawer (inset)', insetShopHrsMult: 'Inset shop-hours multiplier' };
+  const RATE_LABELS = { shopLaborHr: 'Shop labor $/hr', machiningHr: 'Machining $/hr', drawerAsmHr: 'Drawer assembly $/hr', faceFramePart: 'Face frame part $', installPerCab: 'Install $/cabinet (or $/hr)', installMarkupPct: 'Install markup %', overheadPct: 'The 50% (overhead & profit)', hinge: 'Hinge $', guide: 'Drawer guide $', materialMarkupPct: 'Material markup % (display only)' };
+  const DRIVER_LABELS = { materialPerCab: 'Box material $ per cabinet', doorSqFtPerCab: 'Door sq ft per cabinet (when none entered)', drawersPerCab: 'Drawer boxes per cabinet (when blank)', hingesPerDoorSqFt: 'Hinges per sq ft of door', sundriesPerCab: 'Pins and screws $ per cabinet', shopSetupHrs: 'Job setup hours (once per job)', shopHrsPerCab: 'Shop hours per cabinet', machiningHrsPerCab: 'CNC hours per cabinet', drawerAsmHrsPerBox: 'Drawer assembly hours per box', faceFramePartsPerCab: 'Face frame parts per cabinet (inset, when blank)' };
   function renderSettings() {
     $('#rateGrid').innerHTML = Object.keys(RATE_LABELS).map((k) => `<label>${RATE_LABELS[k]} <input type="number" step="any" data-rate="${k}" value="${cfg.rates[k]}"></label>`).join('');
     $('#driverGrid').innerHTML = Object.keys(DRIVER_LABELS).map((k) => `<label>${DRIVER_LABELS[k]} <input type="number" step="any" data-driver="${k}" value="${cfg.drivers[k]}"></label>`).join('');
     $('#doorGrid').innerHTML = cfg.doors.map((d, i) => `<label>${d.label} <div style="display:flex;gap:6px"><input type="number" step="0.1" data-door="${i}" data-k="rate" value="${d.rate}" title="$ per sq ft"><input type="number" step="1" data-door="${i}" data-k="markup" value="${d.markup}" title="markup %" style="max-width:70px"></div></label>`).join('');
-    $('#miscGrid').innerHTML = cfg.boxes.map((b, i) => `<label>Drawer box: ${b.label} ($) <input type="number" step="1" data-box="${i}" value="${b.rate}"></label>`).join('') + cfg.tiers.map((t, i) => `<label>Material tier: ${t.label} (× multiplier) <input type="number" step="0.05" data-tier="${i}" value="${t.mult}"></label>`).join('') + cfg.finishes.map((f, i) => `<label>Finish: ${f.label} ($/cab) <input type="number" step="10" data-finish="${i}" value="${f.perCab}"></label>`).join('');
+    $('#miscGrid').innerHTML = cfg.boxes.map((b, i) => `<label>Drawer box: ${b.label} ($) <input type="number" step="1" data-box="${i}" value="${b.rate}"></label>`).join('') + cfg.finishes.map((f, i) => `<label>Finish suggestion: ${f.label} ($ per sq ft of door) <input type="number" step="1" data-finish="${i}" value="${f.perDoorSqFt}"></label>`).join('');
   }
   $('#settingsPane').addEventListener('input', (e) => {
     const t = e.target, v = Number(t.value);
@@ -326,14 +318,12 @@
     if (t.dataset.driver) cfg.drivers[t.dataset.driver] = v;
     if (t.dataset.door) cfg.doors[Number(t.dataset.door)][t.dataset.k] = v;
     if (t.dataset.box) cfg.boxes[Number(t.dataset.box)].rate = v;
-    if (t.dataset.tier) cfg.tiers[Number(t.dataset.tier)].mult = v;
-    if (t.dataset.finish) cfg.finishes[Number(t.dataset.finish)].perCab = v;
-    applyCfg(); saveCfg(); renderRooms();
+    if (t.dataset.finish) cfg.finishes[Number(t.dataset.finish)].perDoorSqFt = v;
+    applyCfg(); saveCfg(); hydrateJob(); renderRooms();
   });
   $('#btnReset').addEventListener('click', () => { if (confirm('Reset every rate and driver to the fitted defaults?')) { cfg = defaults(); applyCfg(); saveCfg(); renderSettings(); hydrateJob(); renderRooms(); } });
   $('#btnExport').addEventListener('click', () => { const blob = new Blob([JSON.stringify(cfg, null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'iws-estimator-settings.json'; a.click(); });
 
-  // ---- boot ----
   applyCfg(); hydrateJob(); renderSettings(); renderRooms();
 })();
 </script>

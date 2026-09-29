@@ -29,14 +29,17 @@ assets/images/logo/   logo files (see below)
 
 ## Internal estimator (not linked from the site)
 
-`estimator/index.html` is a job-pricing tool for IWS staff, built from five real
-pricing breakdowns. It mirrors the Cabinet Vision "_Materials and Labor" template:
-Material, Hardware, Buyout and Labor budgets per room, then overhead and profit,
-then the finish quote. Rates are the ones IWS actually uses; per-cabinet quantity
-drivers are fitted from the past jobs and editable in the Rates & drivers tab. The
-Model check tab replays six historical jobs. Source data
-is in `estimator/data/jobs.json`. The page is `noindex` and unlinked; put it behind
-a password before sharing the URL widely.
+`estimator/index.html` is a job-pricing tool for IWS staff, built from six real
+pricing breakdowns (Jul 2025 to Sep 2026). It mirrors the Cabinet Vision
+"_Materials and Labor" template: Material, Hardware, Buyout and Labor budgets per
+room, then the 50% for overhead and profit, then the finisher's quote (always
+outside the 50%). Version 2 prices from quantities read off the drawing: door
+area by style, drawer boxes, face-frame parts, inserts and specialty material.
+Hinges, shop and CNC hours, drawer assembly and box material are derived and can
+be overridden. Rates are IWS's own; drivers are fitted from the six jobs and
+editable in the Rates & drivers tab. The Model check tab replays the six jobs
+(average error 4.2%). Source data is in `estimator/data/jobs.json`. The page is
+`noindex` and unlinked; put it behind a password before sharing the URL widely.
 
 ## Logos
 

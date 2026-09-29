@@ -55,13 +55,13 @@ position the Signature line and should be checked against how IWS actually runs 
 - Page titles and meta descriptions are drafted; adjust keywords as needed.
 
 ## Estimator (estimator/index.html)
-- Built from five breakdowns. Two of them (McCasland, Herlinda) priced install by
+- Built from six breakdowns. Two of them (McCasland, Herlinda) priced install by
   the hour, so their cabinet counts are estimates; confirm with IWS.
-- Finish default is $220/cabinet painted, $250 stained, taken from the finish
-  quotes on the past jobs ($157 to $360 per cabinet). Replace with the finisher's
-  real per-cabinet or per-door pricing when known.
-- The rift oak job runs 11% high in the model; more stained/hardwood jobs would
-  tighten that tier.
+- Haney (Sep 29 2026, first try): confirm the 539 sq ft of 1/2 maple board
+  ($5,658) and price the glass, aluminum and crown molding lines that sit at $0.
+- Finish is entered as the finisher's quote. The blank-field suggestion is $36 per
+  sq ft of door painted, $34 stained (past jobs ran $29 to $41). Replace with the
+  finisher's real pricing when known.
 - Add more breakdowns to estimator/data/jobs.json and the HISTORY list in
   estimator/model.js as they come in. Ten to fifteen jobs would make the drivers
   much more reliable.
